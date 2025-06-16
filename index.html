@@ -1,0 +1,682 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Festival Tribus – Acelerando Corações com Cultura e Inclusão</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Montserrat', sans-serif;
+            scroll-behavior: smooth;
+        }
+        h1, h2, h3 {
+            font-family: 'Bebas Neue', cursive;
+        }
+        .btn-primary {
+            transition: all 0.3s ease;
+        }
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+        }
+        .benefit-card:hover {
+            transform: scale(1.05);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+        }
+    </style>
+</head>
+<body class="bg-gray-100">
+    <!-- Header/Navigation -->
+    <header class="bg-black text-white sticky top-0 z-50 shadow-lg">
+        <nav class="container mx-auto px-6 py-4">
+            <div class="flex justify-between items-center">
+                <div>
+                    <h1 class="text-2xl md:text-3xl font-bold text-red-500">FESTIVAL <span class="text-yellow-400">TRIBUS</span></h1>
+                </div>
+                <div class="hidden md:flex space-x-10">
+                    <a href="#sobre" class="hover:text-yellow-400 transition">Sobre</a>
+                    <a href="#objetivos" class="hover:text-yellow-400 transition">Objetivos</a>
+                    <a href="#beneficios" class="hover:text-yellow-400 transition">Benefícios</a>
+                    <a href="#espaco-kids" class="hover:text-yellow-400 transition">Espaço Kids</a>
+                    <a href="#contato" class="hover:text-yellow-400 transition">Contato</a>
+                </div>
+                <div class="md:hidden">
+                    <button id="menu-btn" class="text-white focus:outline-none">
+                        <i class="fas fa-bars text-2xl"></i>
+                    </button>
+                </div>
+            </div>
+            <div id="mobile-menu" class="md:hidden hidden mt-4 pb-2">
+                <a href="#sobre" class="block py-2 hover:text-yellow-400">Sobre</a>
+                <a href="#objetivos" class="block py-2 hover:text-yellow-400">Objetivos</a>
+                <a href="#beneficios" class="block py-2 hover:text-yellow-400">Benefícios</a>
+                <a href="#espaco-kids" class="block py-2 hover:text-yellow-400">Espaço Kids</a>
+                <a href="#contato" class="block py-2 hover:text-yellow-400">Contato</a>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="relative bg-black text-white py-20 md:py-32">
+        <div class="absolute inset-0 bg-gradient-to-b from-black/50 to-black/90">
+            <img src="https://images.unsplash.com/photo-1507035895480-2b3156c31fc8?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Motociclistas" class="w-full h-full object-cover opacity-30">
+        </div>
+        <div class="container mx-auto px-6 relative z-10 text-center">
+            <h1 class="text-4xl md:text-6xl lg:text-7xl font-bold mb-6">
+                <span class="text-red-600">FESTIVAL TRIBUS</span> <br>
+                <span class="text-yellow-400">Acelerando Corações</span> <br>
+                <span class="text-white">com Cultura e Inclusão</span>
+            </h1>
+            <p class="text-lg md:text-xl max-w-3xl mx-auto mb-8">
+                Um encontro vibrante de cultura biker, automobilismo, música e transformação social no Distrito Federal.
+            </p>
+            <div class="flex flex-col sm:flex-row justify-center gap-4">
+                <a href="#sobre" class="btn-primary bg-red-600 hover:bg-red-700 text-white font-bold py-3 px-8 rounded-full">
+                    Saiba Mais
+                </a>
+                <a href="#contato" class="btn-primary bg-yellow-500 hover:bg-yellow-600 text-black font-bold py-3 px-8 rounded-full">
+                    Participe
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sobre o Festival -->
+    <section id="sobre" class="py-20 bg-gray-100">
+        <div class="container mx-auto px-6">
+            <div class="flex flex-col lg:flex-row items-center gap-12">
+                <div class="lg:w-1/2">
+                    <h2 class="text-3xl md:text-4xl font-bold mb-6 text-gray-800">
+                        <span class="text-red-600">Sobre o</span> Festival Tribus
+                    </h2>
+                    <p class="text-gray-700 mb-4 text-lg">
+                        O Festival Tribus é um projeto inovador que leva cultura biker, automobilismo, música e ação social para 3 regiões administrativas do Distrito Federal.
+                    </p>
+                    <p class="text-gray-700 mb-6 text-lg">
+                        Mais do que um evento, somos um movimento que conecta paixões, promove inclusão e acelera transformações sociais através da cultura automotiva.
+                    </p>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div class="bg-white p-6 rounded-lg shadow-md border-l-4 border-red-600">
+                            <div class="flex items-center mb-3">
+                                <i class="fas fa-map-marker-alt text-red-600 text-2xl mr-3"></i>
+                                <h3 class="text-xl font-bold text-gray-800">3 Regiões do DF</h3>
+                            </div>
+                            <p class="text-gray-700">Levaremos cultura e entretenimento para diversas cidades do Distrito Federal.</p>
+                        </div>
+                        <div class="bg-white p-6 rounded-lg shadow-md border-l-4 border-yellow-500">
+                            <div class="flex items-center mb-3">
+                                <i class="fas fa-calendar-alt text-yellow-500 text-2xl mr-3"></i>
+                                <h3 class="text-xl font-bold text-gray-800">5 Domingos</h3>
+                            </div>
+                            <p class="text-gray-700">Um domingo em cada cidade, das 10h às 21h, com programação completa.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="lg:w-1/2">
+                    <img src="https://images.unsplash.com/photo-1509817177816-f58ae93c8c0e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Evento biker" class="rounded-lg shadow-xl w-full h-auto">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Objetivos -->
+    <section id="objetivos" class="py-20 bg-gray-900 text-white">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">
+                    <span class="text-yellow-400">Nossos</span> <span class="text-red-600">Objetivos</span>
+                </h2>
+                <div class="w-24 h-1 bg-red-600 mx-auto"></div>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <div class="bg-gray-800 p-6 rounded-lg text-center hover:bg-gray-700 transition duration-300 transform hover:-translate-y-2">
+                    <div class="text-yellow-400 text-4xl mb-4">
+                        <i class="fas fa-leaf"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Sustentabilidade</h3>
+                    <p class="text-gray-300">Promover sustentabilidade nos setores de cultura, turismo e economia criativa.</p>
+                </div>
+                
+                <div class="bg-gray-800 p-6 rounded-lg text-center hover:bg-gray-700 transition duration-300 transform hover:-translate-y-2">
+                    <div class="text-yellow-400 text-4xl mb-4">
+                        <i class="fas fa-universal-access"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Inclusão</h3>
+                    <p class="text-gray-300">Incentivar a diversidade e acessibilidade para crianças, jovens, famílias e PCDs.</p>
+                </div>
+                
+                <div class="bg-gray-800 p-6 rounded-lg text-center hover:bg-gray-700 transition duration-300 transform hover:-translate-y-2">
+                    <div class="text-yellow-400 text-4xl mb-4">
+                        <i class="fas fa-traffic-light"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Conscientização</h3>
+                    <p class="text-gray-300">Conscientizar sobre segurança no trânsito e direção responsável.</p>
+                </div>
+                
+                <div class="bg-gray-800 p-6 rounded-lg text-center hover:bg-gray-700 transition duration-300 transform hover:-translate-y-2">
+                    <div class="text-yellow-400 text-4xl mb-4">
+                        <i class="fas fa-handshake"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Comunidade</h3>
+                    <p class="text-gray-300">Fomentar o empreendedorismo e fortalecer os laços comunitários.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Benefícios -->
+    <section id="beneficios" class="py-20 bg-white">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4 text-gray-800">
+                    <span class="text-red-600">Benefícios do</span> Festival Tribus
+                </h2>
+                <p class="max-w-2xl mx-auto text-gray-600">Impactos positivos que o festival trará para a comunidade</p>
+                <div class="w-24 h-1 bg-yellow-500 mx-auto mt-4"></div>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Beneficio 1 -->
+                <div class="benefit-card bg-gray-100 p-8 rounded-lg transition duration-300">
+                    <div class="flex items-center mb-4">
+                        <div class="bg-red-100 p-3 rounded-full mr-4">
+                            <i class="fas fa-microphone text-red-600 text-xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-800">Valorização de artistas locais</h3>
+                    </div>
+                    <p class="text-gray-600">Plataforma para músicos, artistas visuais e performáticos da região mostrarem seu talento.</p>
+                </div>
+                
+                <!-- Beneficio 2 -->
+                <div class="benefit-card bg-gray-100 p-8 rounded-lg transition duration-300">
+                    <div class="flex items-center mb-4">
+                        <div class="bg-yellow-100 p-3 rounded-full mr-4">
+                            <i class="fas fa-dollar-sign text-yellow-600 text-xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-800">Fortalecimento econômico</h3>
+                    </div>
+                    <p class="text-gray-600">Movimentação do comércio local, hospedagens e serviços durante os eventos.</p>
+                </div>
+                
+                <!-- Beneficio 3 -->
+                <div class="benefit-card bg-gray-100 p-8 rounded-lg transition duration-300">
+                    <div class="flex items-center mb-4">
+                        <div class="bg-red-100 p-3 rounded-full mr-4">
+                            <i class="fas fa-users text-red-600 text-xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-800">Integração comunitária</h3>
+                    </div>
+                    <p class="text-gray-600">Espaço de convivência e troca de experiências entre diversos grupos sociais.</p>
+                </div>
+                
+                <!-- Beneficio 4 -->
+                <div class="benefit-card bg-gray-100 p-8 rounded-lg transition duration-300">
+                    <div class="flex items-center mb-4">
+                        <div class="bg-yellow-100 p-3 rounded-full mr-4">
+                            <i class="fas fa-seedling text-yellow-600 text-xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-800">Desenvolvimento sustentável</h3>
+                    </div>
+                    <p class="text-gray-600">Práticas eco-friendly e conscientização ambiental integradas ao evento.</p>
+                </div>
+                
+                <!-- Beneficio 5 -->
+                <div class="benefit-card bg-gray-100 p-8 rounded-lg transition duration-300">
+                    <div class="flex items-center mb-4">
+                        <div class="bg-red-100 p-3 rounded-full mr-4">
+                            <i class="fas fa-chart-line text-red-600 text-xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-800">Atração de investimentos</h3>
+                    </div>
+                    <p class="text-gray-600">Visibilidade para potenciais patrocinadores e investidores na região.</p>
+                </div>
+                
+                <!-- Beneficio 6 -->
+                <div class="benefit-card bg-gray-100 p-8 rounded-lg transition duration-300">
+                    <div class="flex items-center mb-4">
+                        <div class="bg-yellow-100 p-3 rounded-full mr-4">
+                            <i class="fas fa-car text-yellow-600 text-xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-800">Cultura automotiva</h3>
+                    </div>
+                    <p class="text-gray-600">Preservação e difusão da cultura motociclística e automobilística com responsabilidade.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Espaço Kids -->
+    <section id="espaco-kids" class="py-20 bg-gradient-to-r from-red-600 to-yellow-500">
+        <div class="container mx-auto px-6">
+            <div class="flex flex-col lg:flex-row items-center">
+                <div class="lg:w-1/2 mb-10 lg:mb-0 lg:pr-10">
+                    <h2 class="text-3xl md:text-4xl font-bold mb-6 text-white">
+                        <i class="fas fa-child mr-3"></i> Espaço Kids
+                    </h2>
+                    <p class="text-white text-lg mb-8">
+                        Um ambiente seguro e divertido especialmente pensado para as crianças durante o festival. Oficinas educativas e atividades lúdicas que estimulam a criatividade e o aprendizado.
+                    </p>
+                    
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                        <div class="bg-white bg-opacity-20 backdrop-blur-sm rounded-lg p-4 border border-white border-opacity-30">
+                            <div class="flex items-center mb-2">
+                                <i class="fas fa-paint-brush text-yellow-300 text-xl mr-2"></i>
+                                <h3 class="font-bold text-white">Oficinas de Arte</h3>
+                            </div>
+                            <p class="text-white text-sm">Atividades criativas com materiais sustentáveis.</p>
+                        </div>
+                        
+                        <div class="bg-white bg-opacity-20 backdrop-blur-sm rounded-lg p-4 border border-white border-opacity-30">
+                            <div class="flex items-center mb-2">
+                                <i class="fas fa-book-open text-yellow-300 text-xl mr-2"></i>
+                                <h3 class="font-bold text-white">Contação de Histórias</h3>
+                            </div>
+                            <p class="text-white text-sm">Narrativas sobre segurança no trânsito e cidadania.</p>
+                        </div>
+                        
+                        <div class="bg-white bg-opacity-20 backdrop-blur-sm rounded-lg p-4 border border-white border-opacity-30">
+                            <div class="flex items-center mb-2">
+                                <i class="fas fa-gamepad text-yellow-300 text-xl mr-2"></i>
+                                <h3 class="font-bold text-white">Jogos Interativos</h3>
+                            </div>
+                            <p class="text-white text-sm">Atividades que ensinam sobre trânsito de forma divertida.</p>
+                        </div>
+                        
+                        <div class="bg-white bg-opacity-20 backdrop-blur-sm rounded-lg p-4 border border-white border-opacity-30">
+                            <div class="flex items-center mb-2">
+                                <i class="fas fa-puzzle-piece text-yellow-300 text-xl mr-2"></i>
+                                <h3 class="font-bold text-white">Brinquedos Educativos</h3>
+                            </div>
+                            <p class="text-white text-sm">Materiais que desenvolvem habilidades cognitivas.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="lg:w-1/2">
+                    <img src="https://images.unsplash.com/photo-1577896851231-70ef18881754?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Crianças em oficina de arte" class="rounded-xl shadow-2xl w-full h-auto">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Acessibilidade -->
+    <section id="acessibilidade" class="py-20 bg-gray-800 text-white">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">
+                    <span class="text-yellow-400">Acessibilidade</span> e <span class="text-red-600">Inclusão</span>
+                </h2>
+                <p class="max-w-2xl mx-auto text-gray-300">Compromisso com a participação de todos</p>
+                <div class="w-24 h-1 bg-red-600 mx-auto mt-4"></div>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="bg-gray-700 p-8 rounded-lg text-center">
+                    <div class="text-red-500 text-4xl mb-4">
+                        <i class="fas fa-sign-language"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Intérpretes de Libras</h3>
+                    <p class="text-gray-300">Todos os shows e apresentações principais terão interpretação em LIBRAS.</p>
+                </div>
+                
+                <div class="bg-gray-700 p-8 rounded-lg text-center">
+                    <div class="text-yellow-400 text-4xl mb-4">
+                        <i class="fas fa-wheelchair"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Infraestrutura Acessível</h3>
+                    <p class="text-gray-300">Espaços adaptados, rampas, banheiros acessíveis e sinalização tátil.</p>
+                </div>
+                
+                <div class="bg-gray-700 p-8 rounded-lg text-center">
+                    <div class="text-yellow-400 text-4xl mb-4">
+                        <i class="fas fa-users-cog"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Equipe Treinada</h3>
+                    <p class="text-gray-300">Profissionais capacitados para oferecer atendimento inclusivo a todos os públicos.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Infraestrutura -->
+    <section class="py-20 bg-white">
+        <div class="container mx-auto px-6">
+            <div class="flex flex-col lg:flex-row items-center gap-12">
+                <div class="lg:w-1/2 order-1 lg:order-0">
+                    <img src="https://images.unsplash.com/photo-1470229722913-7c0e2dbbafd3?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Estrutura de palco" class="rounded-lg shadow-lg w-full h-auto">
+                </div>
+                <div class="lg:w-1/2 order-0 lg:order-1">
+                    <h2 class="text-3xl md:text-4xl font-bold mb-6 text-gray-800">
+                        <span class="text-red-600">Infraestrutura</span> Profissional
+                    </h2>
+                    <p class="text-gray-700 mb-6 text-lg">
+                        Garantimos toda estrutura necessária para um evento seguro, confortável e de alta qualidade.
+                    </p>
+                    
+                    <div class="space-y-4">
+                        <div class="flex items-start">
+                            <div class="bg-red-100 p-2 rounded-full mr-4">
+                                <i class="fas fa-volume-up text-red-600 text-lg"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-gray-800">Sonorização profissional</h4>
+                                <p class="text-gray-600">Sistemas de som de alta qualidade para todas as apresentações</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start">
+                            <div class="bg-yellow-100 p-2 rounded-full mr-4">
+                                <i class="fas fa-lightbulb text-yellow-600 text-lg"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-gray-800">Iluminação cênica</h4>
+                                <p class="text-gray-600">Efeitos luminosos profissionais para shows e apresentações</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start">
+                            <div class="bg-red-100 p-2 rounded-full mr-4">
+                                <i class="fas fa-tv text-red-600 text-lg"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-gray-800">Telões LED</h4>
+                                <p class="text-gray-600">Transmissão simultânea para todos os participantes</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start">
+                            <div class="bg-yellow-100 p-2 rounded-full mr-4">
+                                <i class="fas fa-shield-alt text-yellow-600 text-lg"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-gray-800">Segurança</h4>
+                                <p class="text-gray-600">Equipe de segurança, brigada de incêndio e primeiros socorros</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Investimento -->
+    <section class="py-20 bg-gray-100">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4 text-gray-800">
+                    <span class="text-yellow-500">Investimento</span> e <span class="text-red-600">Cronograma</span>
+                </h2>
+                <div class="w-24 h-1 bg-gray-800 mx-auto"></div>
+            </div>
+            
+            <div class="flex flex-col lg:flex-row gap-10">
+                <div class="lg:w-1/2 bg-white p-8 rounded-lg shadow-lg">
+                    <h3 class="text-2xl font-bold text-red-600 mb-6">Detalhes do Investimento</h3>
+                    <div class="mb-6">
+                        <h4 class="font-bold text-lg text-gray-800 mb-2">Cobertura do Evento:</h4>
+                        <ul class="space-y-2 text-gray-700">
+                            <li class="flex items-start">
+                                <i class="fas fa-check text-green-500 mt-1 mr-2"></i>
+                                <span>5 cidades do Distrito Federal</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check text-green-500 mt-1 mr-2"></i>
+                                <span>1 domingo em cada cidade</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check text-green-500 mt-1 mr-2"></i>
+                                <span>Das 10h às 21h com programação completa</span>
+                            </li>
+                        </ul>
+                    </div>
+                    
+                    <div class="mb-6">
+                        <h4 class="font-bold text-lg text-gray-800 mb-2"></h4>
+                        <div class="text-3xl font-bold text-yellow-600 mb-2"></div>
+                        <p class="text-gray-700"></p>
+                    </div>
+                    
+                    <div class="bg-yellow-50 border-l-4 border-yellow-500 p-4">
+                        <h4 class="font-bold text-lg text-gray-800 mb-2">Oportunidades de Patrocínio:</h4>
+                        <p class="text-gray-700">
+                            Empresas interessadas podem se tornar parceiras do projeto com diferentes níveis de investimento e benefícios de visibilidade.
+                        </p>
+                    </div>
+                </div>
+                
+                <div class="lg:w-1/2">
+                    <div class="bg-gray-800 text-white p-8 rounded-lg shadow-lg h-full">
+                        <h3 class="text-2xl font-bold text-yellow-400 mb-6">Cronograma das Edições</h3>
+                        <div class="space-y-6">
+                            <div class="border-l-4 border-red-600 pl-6 py-2">
+                                <div class="font-bold text-lg">1ª Edição</div>
+                                <div class="text-gray-300 flex items-center">
+                                    <i class="fas fa-calendar-day text-yellow-400 mr-2"></i>
+                                    <span>Domingo, 15/10 - 10h às 21h</span>
+                                </div>
+                                <div class="text-gray-300 flex items-center">
+                                    <i class="fas fa-map-marker-alt text-yellow-400 mr-2"></i>
+                                    <span>Taguatinga - DF</span>
+                                </div>
+                            </div>
+                            
+                            <div class="border-l-4 border-red-600 pl-6 py-2">
+                                <div class="font-bold text-lg">2ª Edição</div>
+                                <div class="text-gray-300 flex items-center">
+                                    <i class="fas fa-calendar-day text-yellow-400 mr-2"></i>
+                                    <span>Domingo, 22/10 - 10h às 21h</span>
+                                </div>
+                                <div class="text-gray-300 flex items-center">
+                                    <i class="fas fa-map-marker-alt text-yellow-400 mr-2"></i>
+                                    <span>Ceilândia - DF</span>
+                                </div>
+                            </div>
+                            
+                            <div class="border-l-4 border-red-600 pl-6 py-2">
+                                <div class="font-bold text-lg">3ª Edição</div>
+                                <div class="text-gray-300 flex items-center">
+                                    <i class="fas fa-calendar-day text-yellow-400 mr-2"></i>
+                                    <span>Domingo, 29/10 - 10h às 21h</span>
+                                </div>
+                                <div class="text-gray-300 flex items-center">
+                                    <i class="fas fa-map-marker-alt text-yellow-400 mr-2"></i>
+                                    <span>Plano Piloto - DF</span>
+                                </div>
+                            </div>
+                            
+                            <div class="border-l-4 border-red-600 pl-6 py-2">
+                                <div class="font-bold text-lg">4ª Edição</div>
+                                <div class="text-gray-300 flex items-center">
+                                    <i class="fas fa-calendar-day text-yellow-400 mr-2"></i>
+                                    <span>Domingo, 05/11 - 10h às 21h</span>
+                                </div>
+                                <div class="text-gray-300 flex items-center">
+                                    <i class="fas fa-map-marker-alt text-yellow-400 mr-2"></i>
+                                    <span>Gama - DF</span>
+                                </div>
+                            </div>
+                            
+                            <div class="border-l-4 border-red-600 pl-6 py-2">
+                                <div class="font-bold text-lg">5ª Edição</div>
+                                <div class="text-gray-300 flex items-center">
+                                    <i class="fas fa-calendar-day text-yellow-400 mr-2"></i>
+                                    <span>Domingo, 12/11 - 10h às 21h</span>
+                                </div>
+                                <div class="text-gray-300 flex items-center">
+                                    <i class="fas fa-map-marker-alt text-yellow-400 mr-2"></i>
+                                    <span>Brazlândia - DF</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Chamada Final -->
+    <section class="py-16 bg-black text-white text-center">
+        <div class="container mx-auto px-6">
+            <div class="max-w-4xl mx-auto">
+                <h2 class="text-2xl md:text-4xl font-bold mb-6">
+                    "Mais do que motores e velocidade, o <span class="text-red-600">Festival Tribus</span> é um encontro de histórias, cultura e transformação social."
+                </h2>
+                <div class="flex justify-center">
+                    <a href="#contato" class="btn-primary bg-yellow-500 hover:bg-yellow-600 text-black font-bold py-3 px-8 rounded-full inline-block">
+                        Seja Parte Desse Movimento
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contato -->
+    <section id="contato" class="py-20 bg-gray-100">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4 text-gray-800">
+                    <span class="text-red-600">Contato</span> e <span class="text-yellow-500">Redes Sociais</span>
+                </h2>
+                <p class="max-w-2xl mx-auto text-gray-600">Entre em contato para patrocínios, parcerias ou mais informações</p>
+                <div class="w-24 h-1 bg-gray-800 mx-auto mt-4"></div>
+            </div>
+            
+            <div class="flex flex-col lg:flex-row gap-10">
+                <div class="lg:w-1/2 bg-white p-8 rounded-lg shadow-lg">
+                    <h3 class="text-2xl font-bold text-gray-800 mb-6">Informações de Contato</h3>
+                    <div class="space-y-6">
+                        <div class="flex items-start">
+                            <div class="bg-red-100 p-2 rounded-full mr-4">
+                                <i class="fas fa-globe text-red-600"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-gray-800">Site Oficial</h4>
+                                <a href="http://www.institutotribus.com.br" class="text-blue-600 hover:underline">www.institutotribus.com.br</a>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start">
+                            <div class="bg-yellow-100 p-2 rounded-full mr-4">
+                                <i class="fas fa-id-card text-yellow-600"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-gray-800">CNPJ</h4>
+                                <p class="text-gray-700">50.903.480/0001-79</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start">
+                            <div class="bg-red-100 p-2 rounded-full mr-4">
+                                <i class="fas fa-envelope text-red-600"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-gray-800">E-mail</h4>
+                                <a href="mailto:contato@institutotribus.com.br" class="text-blue-600 hover:underline">contato@institutotribus.com.br</a>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start">
+                            <div class="bg-yellow-100 p-2 rounded-full mr-4">
+                                <i class="fas fa-phone-alt text-yellow-600"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-gray-800">Telefone</h4>
+                                <p class="text-gray-700">(61) 99999-9999</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <h3 class="text-2xl font-bold text-gray-800 mt-10 mb-6">Redes Sociais</h3>
+                    <div class="flex space-x-4">
+                        <a href="#" class="w-12 h-12 rounded-full bg-blue-600 text-white flex items-center justify-center hover:bg-blue-700">
+                            <i class="fab fa-facebook-f text-xl"></i>
+                        </a>
+                        <a href="#" class="w-12 h-12 rounded-full bg-purple-600 text-white flex items-center justify-center hover:bg-purple-700">
+                            <i class="fab fa-instagram text-xl"></i>
+                        </a>
+                        <a href="#" class="w-12 h-12 rounded-full bg-blue-400 text-white flex items-center justify-center hover:bg-blue-500">
+                            <i class="fab fa-twitter text-xl"></i>
+                        </a>
+                        <a href="#" class="w-12 h-12 rounded-full bg-red-600 text-white flex items-center justify-center hover:bg-red-700">
+                            <i class="fab fa-youtube text-xl"></i>
+                        </a>
+                    </div>
+                </div>
+                <div class="lg:w-1/2 flex items-center justify-center p-8"> 
+    <div class="text-center">
+        <h3 class="text-2xl md:text-3xl font-bold text-gray-800 mb-6">Pronto para se Inscrever?</h3>
+        <p class="text-gray-700 mb-8 max-w-sm mx-auto">Clique no botão abaixo para preencher o formulário de inscrição e garantir sua vaga!</p>
+        <a href="https://airtable.com/appgFCIs0yqrE85Gd/pagzOoTTr2nxB5ufT/form" target="_blank" class="btn-primary bg-yellow-500 hover:bg-yellow-600 text-black font-bold py-3 px-8 rounded-full inline-block text-lg">
+            Inscreva-se Agora!
+        </a>
+        <p class="text-sm text-gray-500 mt-4">Você será redirecionado para uma nova página.</p>
+    </div>
+</div>
+                
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-black text-white py-10">
+        <div class="container mx-auto px-6">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <div class="mb-6 md:mb-0">
+                    <h2 class="text-2xl font-bold text-red-600 mb-2">FESTIVAL <span class="text-yellow-400">TRIBUS</span></h2>
+                    <p class="text-gray-400">Acelerando Corações com Cultura e Inclusão</p>
+                </div>
+                
+                <div class="flex space-x-6">
+                    <a href="#" class="text-gray-400 hover:text-white">
+                        <i class="fab fa-facebook-f text-xl"></i>
+                    </a>
+                    <a href="#" class="text-gray-400 hover:text-white">
+                        <i class="fab fa-instagram text-xl"></i>
+                    </a>
+                    <a href="#" class="text-gray-400 hover:text-white">
+                        <i class="fab fa-twitter text-xl"></i>
+                    </a>
+                    <a href="#" class="text-gray-400 hover:text-white">
+                        <i class="fab fa-youtube text-xl"></i>
+                    </a>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-800 mt-8 pt-8 text-center text-gray-400">
+                <p>&copy; 2023 Instituto Tribus. Todos os direitos reservados.</p>
+                <p class="mt-2">CNPJ: 50.903.480/0001-79</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        const menuBtn = document.getElementById('menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        
+        menuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+                
+                // Close mobile menu if open
+                if (!mobileMenu.classList.contains('hidden')) {
+                    mobileMenu.classList.add('hidden');
+                }
+            });
+        });
+    </script>
+</body>
+</html>
