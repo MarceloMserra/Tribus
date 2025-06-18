@@ -8,127 +8,76 @@
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <style>
-    html, body {
-      overflow-x: hidden;
-    }
-    .hero-overlay {
-      background-color: rgba(0, 0, 0, 0.5);
-    }
+    html, body { overflow-x: hidden; }
+    .hero-overlay { background-color: rgba(0, 0, 0, 0.5); }
     .value-card:hover, .project-card:hover, .course-card:hover, .document-btn:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
-    }
-    .project-card, .course-card {
-      transition: all 0.3s ease;
-    }
-    .nav-link {
-      position: relative;
-    }
+      transform: translateY(-5px); box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1); }
+    .project-card, .course-card { transition: all 0.3s ease; }
+    .nav-link { position: relative; }
     .nav-link::after {
-      content: '';
-      position: absolute;
-      width: 0;
-      height: 2px;
-      bottom: 0;
-      left: 0;
-      background-color: #f97316;
-      transition: width 0.3s ease;
-    }
-    .nav-link:hover::after {
-      width: 100%;
-    }
+      content: ''; position: absolute; width: 0; height: 2px; bottom: 0; left: 0;
+      background-color: #f97316; transition: width 0.3s ease; }
+    .nav-link:hover::after { width: 100%; }
   </style>
 </head>
 <body class="font-sans bg-gray-50 overflow-x-hidden">
-
-  <!-- AOS Script -->
-  <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
-  <script>
-    AOS.init({
-      duration: 800,
-      once: true,
-    });
-  </script>
-
-  <!-- Header/Navbar -->
-  <header class="fixed w-full bg-white shadow-md z-50">
-    <div class="max-w-screen-xl mx-auto flex items-center justify-between px-4 py-2 space-x-4">
-      <div class="flex items-center space-x-4">
-        <img src="https://raw.githubusercontent.com/MarceloMserra/Tribus/main/Logotribus.png" alt="Logo Instituto Tribus" class="w-12 h-12 object-contain">
-        <div>
-          <h1 class="text-2xl font-bold text-blue-800">Instituto Tribus</h1>
-          <p class="text-sm text-orange-500">Transparência, Cultura e Inclusão Social</p>
-        </div>
+<script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+<script>AOS.init({ duration: 800, once: true });</script>
+<header class="fixed w-full bg-white shadow-md z-50">
+  <div class="max-w-screen-xl mx-auto flex items-center justify-between px-4 py-2 space-x-4">
+    <div class="flex items-center space-x-4">
+      <img src="https://raw.githubusercontent.com/MarceloMserra/Tribus/main/Logotribus.png" alt="Logo Instituto Tribus" class="w-12 h-12 object-contain">
+      <div>
+        <h1 class="text-2xl font-bold text-blue-800">Instituto Tribus</h1>
+        <p class="text-sm text-orange-500">Transparência, Cultura e Inclusão Social</p>
       </div>
-      <nav class="hidden md:block">
-        <ul class="flex space-x-8">
-          <li><a href="#quem-somos" class="nav-link text-gray-700 hover:text-orange-500">Quem Somos</a></li>
-          <li><a href="#projetos" class="nav-link text-gray-700 hover:text-orange-500">Projetos</a></li>
-          <li><a href="#cursos" class="nav-link text-gray-700 hover:text-orange-500">Cursos</a></li>
-          <li><a href="#impacto" class="nav-link text-gray-700 hover:text-orange-500">Impacto</a></li>
-          <li><a href="#documentos" class="nav-link text-gray-700 hover:text-orange-500">Documentos</a></li>
-          <li><a href="#contato" class="nav-link text-gray-700 hover:text-orange-500">Contato</a></li>
-        </ul>
-      </nav>
-      <button class="md:hidden text-gray-700">
-        <i class="fas fa-bars text-2xl"></i>
-      </button>
     </div>
-  </header>
-
-  <!-- Hero Section -->
-  <section class="relative w-full h-screen overflow-hidden">
-    <img src="https://raw.githubusercontent.com/MarceloMserra/Tribus/refs/heads/main/inicial1.png" class="absolute inset-0 w-full h-full object-cover" alt="Imagem de fundo" />
-    <div class="absolute inset-0 bg-black bg-opacity-60 flex flex-col items-center justify-center text-center px-4 text-white">
-      <h1 class="text-3xl md:text-5xl font-bold mb-4">Transformando realidades</h1>
-      <p class="text-lg md:text-2xl mb-6">por meio da cultura, da capacitação e do amor ao próximo.</p>
-      <a href="#quem-somos" class="bg-orange-500 hover:bg-orange-600 text-white font-bold py-3 px-6 rounded-full transition duration-300">
-        Conheça nosso trabalho
-      </a>
+    <nav class="hidden md:block">
+      <ul class="flex space-x-8">
+        <li><a href="#quem-somos" class="nav-link text-gray-700 hover:text-orange-500">Quem Somos</a></li>
+        <li><a href="#projetos" class="nav-link text-gray-700 hover:text-orange-500">Projetos</a></li>
+        <li><a href="#cursos" class="nav-link text-gray-700 hover:text-orange-500">Cursos</a></li>
+        <li><a href="#impacto" class="nav-link text-gray-700 hover:text-orange-500">Impacto</a></li>
+        <li><a href="#documentos" class="nav-link text-gray-700 hover:text-orange-500">Documentos</a></li>
+        <li><a href="#contato" class="nav-link text-gray-700 hover:text-orange-500">Contato</a></li>
+      </ul>
+    </nav>
+    <button class="md:hidden text-gray-700">
+      <i class="fas fa-bars text-2xl"></i>
+    </button>
+  </div>
+</header>
+<section class="relative w-full h-screen overflow-hidden">
+  <img src="https://raw.githubusercontent.com/MarceloMserra/Tribus/refs/heads/main/inicial1.png" class="absolute inset-0 w-full h-full object-cover" alt="Imagem de fundo" />
+  <div class="absolute inset-0 bg-black bg-opacity-60 flex flex-col items-center justify-center text-center px-4 text-white">
+    <h1 class="text-3xl md:text-5xl font-bold mb-4">Transformando realidades</h1>
+    <p class="text-lg md:text-2xl mb-6">por meio da cultura, da capacitação e do amor ao próximo.</p>
+    <a href="#quem-somos" class="bg-orange-500 hover:bg-orange-600 text-white font-bold py-3 px-6 rounded-full transition duration-300">Conheça nosso trabalho</a>
+  </div>
+</section>
+<section id="quem-somos" class="py-20 bg-white">
+  <div class="container mx-auto px-4">
+    <div class="text-center mb-16" data-aos="fade-up">
+      <h2 class="text-4xl font-extrabold text-blue-800 mb-4">Quem Somos</h2>
+      <div class="w-24 h-1 bg-orange-500 mx-auto"></div>
     </div>
-  </section>
-
-  <!-- Quem Somos Section -->
-  <section id="quem-somos" class="py-20 bg-white">
-    <div class="container mx-auto px-4">
-      <div class="text-center mb-16" data-aos="fade-up">
-        <h2 class="text-4xl font-extrabold text-blue-800 mb-4">Quem Somos</h2>
-        <div class="w-24 h-1 bg-orange-500 mx-auto"></div>
+    <div class="flex flex-col lg:flex-row items-start gap-12">
+      <div class="lg:w-1/2 w-full" data-aos="fade-right">
+        <img src="https://raw.githubusercontent.com/MarceloMserra/Tribus/refs/heads/main/Quemsomos00.png" alt="Equipe do Instituto Tribus" class="rounded-xl shadow-2xl w-full h-auto">
       </div>
-      <div class="flex flex-col lg:flex-row items-center gap-12">
-        <div class="lg:w-1/2 w-full" data-aos="fade-right">
-          <img src="https://raw.githubusercontent.com/MarceloMserra/Tribus/refs/heads/main/Quemsomos00.png" alt="Equipe do Instituto Tribus" class="rounded-xl shadow-2xl w-full h-auto">
-        </div>
-        <div class="lg:w-1/2 w-full text-gray-700 text-lg leading-relaxed" data-aos="fade-left">
-          <div id="texto-truncado" class="max-h-[480px] overflow-hidden transition-all duration-500 ease-in-out space-y-6">
-            <p>O <strong>Instituto Tribus</strong> nasceu da paixão por ajudar o próximo, unir culturas e acelerar corações por meio da inclusão, da arte e da solidariedade...</p>
-            <p><strong>Nossa missão:</strong> promover a inclusão e o desenvolvimento humano por meio da cultura...</p>
-            <p><strong>Nossa visão:</strong> ser referência nacional em impacto social, criando oportunidades reais...</p>
-            <p><strong>Nossas ações transformadoras incluem:</strong> capacitação de mulheres, cursos como pilotagem de drones...</p>
-            <div class="bg-blue-50 p-5 rounded-lg border-l-4 border-orange-500">
-              <p class="text-blue-800 font-semibold italic text-lg">
-                "Grandes batalhas são dadas a grandes guerreiros. E nós não lutamos sozinhos. Somos uma tribo, somos o Instituto Tribus!"
-              </p>
-            </div>
-          </div>
-          <button id="botao-toggle" onclick="expandirTexto()" class="mt-6 inline-block px-6 py-2 bg-orange-500 text-white font-bold rounded hover:bg-orange-600 transition">
-            Ver mais
-          </button>
+      <div class="lg:w-1/2 w-full text-gray-700 text-lg leading-relaxed space-y-6" data-aos="fade-left">
+        <p>O <strong>Instituto Tribus</strong> nasceu da paixão por ajudar o próximo, unir culturas e acelerar corações por meio da inclusão, da arte e da solidariedade. Fundado a partir da mobilização espontânea do evento <strong class="text-blue-800">Domingueira Moto Rock</strong>, em 2019, hoje somos uma <span class="font-bold text-blue-800">Organização da Sociedade Civil sem fins lucrativos</span>, comprometida com a transformação social de comunidades vulneráveis.</p>
+        <p><strong>Nosso propósito:</strong> <span class="font-bold text-orange-500">cuidar de pessoas</span>. Atuamos com dedicação junto a mulheres, crianças, adolescentes, pessoas com deficiência, idosos e famílias que enfrentam dificuldades. Por meio de <span class="font-semibold text-blue-700">ações culturais, sociais, educativas e profissionais</span>, buscamos devolver dignidade, despertar talentos e construir novas histórias de esperança.</p>
+        <p><strong>Nossa missão:</strong> promover a inclusão e o desenvolvimento humano por meio da cultura, da capacitação e da valorização de grupos historicamente marginalizados. Trabalhamos com <span class="italic">amor, respeito e empatia</span>, fundamentados em nossos pilares: <span class="italic text-gray-600">Igualdade, Respeito, Honra e Irmandade</span>.</p>
+        <p><strong>Nossa visão:</strong> ser referência nacional em impacto social, criando oportunidades reais e construindo uma sociedade mais justa, acessível e sustentável para todos.</p>
+        <p><strong>Nossas ações transformadoras incluem:</strong> capacitação de mulheres, cursos como pilotagem de drones, musicalização infantil, projetos ambientais como o <em>Distrito Animal</em> e eventos de impacto como o <strong class="text-blue-800">Tribus Festival</strong>.</p>
+        <div class="bg-blue-50 p-5 rounded-lg border-l-4 border-orange-500">
+          <p class="text-blue-800 font-semibold italic text-lg">"Grandes batalhas são dadas a grandes guerreiros. E nós não lutamos sozinhos. Somos uma tribo, somos o Instituto Tribus!"</p>
         </div>
       </div>
     </div>
-  </section>
-
-  <!-- Botão Ver mais/menos -->
-  <script>
-    function expandirTexto() {
-      const texto = document.getElementById('texto-truncado');
-      const botao = document.getElementById('botao-toggle');
-      texto.classList.toggle('max-h-[480px]');
-      botao.textContent = texto.classList.contains('max-h-[480px]') ? 'Ver mais' : 'Ver menos';
-    }
-  </script>
-
+  </div>
+</section>
 </body>
 </html>
 
