@@ -93,8 +93,7 @@
   </div>
 </section>
   
-    <!-- Quem Somos Section -->
-<section id="quem-somos" class="py-20 bg-white">
+    <<section id="quem-somos" class="py-20 bg-gradient-to-br from-white via-gray-50 to-white">
   <div class="container mx-auto px-4">
     
     <!-- Título -->
@@ -105,28 +104,39 @@
     
     <!-- Bloco de imagem + texto -->
     <div class="flex flex-col lg:flex-row items-center gap-12">
-      <!-- Imagem lateral -->
+      
+      <!-- Imagem com destaque -->
       <div class="lg:w-1/2">
         <img src="https://raw.githubusercontent.com/MarceloMserra/Tribus/refs/heads/main/quem-somos.png"
              alt="Equipe do Instituto Tribus"
-             class="rounded-lg shadow-xl w-full h-auto">
+             class="rounded-lg shadow-2xl border-4 border-orange-500 w-full h-auto">
       </div>
       
-      <!-- Texto -->
-      <div class="lg:w-1/2">
-        <p class="text-gray-700 mb-6">
-          O Instituto Tribus (CNPJ: 50.903.480/0001-79) é uma Organização da Sociedade Civil sem fins lucrativos, fundada a partir de uma iniciativa solidária chamada Domingueira Moto Rock, que surgiu em 2019 com ações voluntárias para ajudar comunidades carentes.
+      <!-- Texto com ícones e destaque -->
+      <div class="lg:w-1/2 text-gray-700">
+        <p class="mb-6 flex items-start">
+          <i class="fas fa-hands-helping text-orange-500 mr-3 mt-1"></i>
+          O Instituto Tribus (CNPJ: 50.903.480/0001-79) é uma Organização da Sociedade Civil sem fins lucrativos, fundada a partir da iniciativa solidária Domingueira Moto Rock, que surgiu em 2019 com ações voluntárias para ajudar comunidades carentes.
         </p>
-        <p class="text-gray-700 mb-6">
-          Hoje, o Instituto Tribus atua no Distrito Federal, Entorno e Rio de Janeiro promovendo projetos culturais, ações sociais e cursos profissionalizantes voltados para mulheres, crianças, jovens e pessoas com deficiência (PCDs). Nossa atuação é marcada pela transparência, pelo compromisso com a ética pública e pelo foco na inclusão de grupos historicamente marginalizados.
+        
+        <p class="mb-6 flex items-start">
+          <i class="fas fa-globe-americas text-orange-500 mr-3 mt-1"></i>
+          Atuamos no DF, Entorno e RJ com projetos culturais, ações sociais e cursos profissionalizantes voltados para mulheres, crianças, jovens e PCDs. Valorizamos a ética, a inclusão e a transparência.
         </p>
-        <div class="bg-blue-50 p-6 rounded-lg border-l-4 border-orange-500">
+        
+        <div class="bg-blue-100 p-6 rounded-xl border-l-8 border-orange-500 shadow-md hover:scale-105 transition transform duration-300">
           <p class="text-blue-800 font-semibold italic text-lg">
             "Cultura, respeito e inclusão nos movem. Junte-se a nós!"
           </p>
         </div>
+
+        <a href="#contato" class="inline-block mt-6 bg-orange-500 text-white font-bold py-2 px-6 rounded-lg hover:bg-orange-600 transition">
+          Fale com a gente
+        </a>
       </div>
     </div>
+  </div>
+</section>
     
     <!-- Galeria com 2 fotos e 2 vídeos -->
     <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mt-12">
