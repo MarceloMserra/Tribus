@@ -18,6 +18,12 @@
       content: ''; position: absolute; width: 0; height: 2px; bottom: 0; left: 0;
       background-color: #f97316; transition: width 0.3s ease; }
     .nav-link:hover::after { width: 100%; }
+    .mobile-menu {
+      display: none;
+    }
+    .mobile-menu.active {
+      display: block;
+    }
   </style>
 </head>
 <body class="font-sans bg-gray-50 overflow-x-hidden">
@@ -26,6 +32,7 @@
 <header class="fixed w-full bg-white shadow-md z-50">
   <div class="max-w-screen-xl mx-auto flex items-center justify-between px-4 py-2 space-x-4">
     <div class="flex items-center space-x-4">
+      <a href="#" class="text-orange-500 text-xl"><i class="fas fa-home"></i></a>
       <img src="https://raw.githubusercontent.com/MarceloMserra/Tribus/main/Logotribus.png" alt="Logo Instituto Tribus" class="w-12 h-12 object-contain">
       <div>
         <h1 class="text-2xl font-bold text-blue-800">Instituto Tribus</h1>
@@ -42,11 +49,29 @@
         <li><a href="#contato" class="nav-link text-gray-700 hover:text-orange-500">Contato</a></li>
       </ul>
     </nav>
-    <button class="md:hidden text-gray-700">
+    <button class="md:hidden text-gray-700" id="mobile-menu-toggle">
       <i class="fas fa-bars text-2xl"></i>
     </button>
   </div>
+  <div class="md:hidden mobile-menu bg-white px-4 py-3 shadow" id="mobile-menu">
+    <ul class="space-y-3">
+      <li><a href="#" class="block text-gray-700 hover:text-orange-500">Início</a></li>
+      <li><a href="#quem-somos" class="block text-gray-700 hover:text-orange-500">Quem Somos</a></li>
+      <li><a href="#projetos" class="block text-gray-700 hover:text-orange-500">Projetos</a></li>
+      <li><a href="#cursos" class="block text-gray-700 hover:text-orange-500">Cursos</a></li>
+      <li><a href="#impacto" class="block text-gray-700 hover:text-orange-500">Impacto</a></li>
+      <li><a href="#documentos" class="block text-gray-700 hover:text-orange-500">Documentos</a></li>
+      <li><a href="#contato" class="block text-gray-700 hover:text-orange-500">Contato</a></li>
+    </ul>
+  </div>
 </header>
+<script>
+  document.getElementById('mobile-menu-toggle').addEventListener('click', function () {
+    const menu = document.getElementById('mobile-menu');
+    menu.classList.toggle('active');
+  });
+</script>
+  
 <section class="relative w-full h-screen overflow-hidden">
   <img src="https://raw.githubusercontent.com/MarceloMserra/Tribus/refs/heads/main/inicial1.png" class="absolute inset-0 w-full h-full object-cover" alt="Imagem de fundo" />
   <div class="absolute inset-0 bg-black bg-opacity-60 flex flex-col items-center justify-center text-center px-4 text-white">
@@ -723,65 +748,60 @@
     </div>
   </div>
 </section>
-  <!-- Footer -->
-<footer class="bg-gray-900 text-white py-12">
+<!-- Footer -->
+<footer class="bg-gray-900 text-white py-12 mt-20">
   <div class="container mx-auto px-4">
     <div class="grid md:grid-cols-4 gap-8 mb-8">
-      
-      <!-- Sobre -->
+
+      <!-- Logo + Início -->
       <div>
-        <h3 class="text-xl font-bold mb-4">Instituto Tribus</h3>
-        <p class="text-gray-400">
-          Transparência, Cultura e Inclusão Social. Transformando realidades desde 2019.
+        <a href="#" class="flex items-center space-x-3 hover:text-orange-500">
+          <i class="fas fa-home text-xl"></i>
+          <span class="text-lg font-bold">Início</span>
+        </a>
+        <p class="text-gray-400 mt-4">
+          Instituto Tribus — Transparência, Cultura e Inclusão Social. <br>
+          Transformando realidades desde 2019.
         </p>
       </div>
-      
-      <!-- Links -->
+
+      <!-- Links Rápidos -->
       <div>
         <h3 class="text-xl font-bold mb-4">Links Rápidos</h3>
-        <ul class="space-y-2">
-          <li><a href="#quem-somos" class="text-gray-400 hover:text-white">Quem Somos</a></li>
-          <li><a href="#projetos" class="text-gray-400 hover:text-white">Projetos</a></li>
-          <li><a href="#cursos" class="text-gray-400 hover:text-white">Cursos</a></li>
-          <li><a href="#documentos" class="text-gray-400 hover:text-white">Documentos</a></li>
+        <ul class="space-y-2 text-gray-400">
+          <li><a href="#quem-somos" class="hover:text-white">Quem Somos</a></li>
+          <li><a href="#projetos" class="hover:text-white">Projetos</a></li>
+          <li><a href="#cursos" class="hover:text-white">Cursos</a></li>
+          <li><a href="#documentos" class="hover:text-white">Documentos</a></li>
+          <li><a href="#contato" class="hover:text-white">Contato</a></li>
         </ul>
       </div>
-      
+
       <!-- Contato -->
       <div>
         <h3 class="text-xl font-bold mb-4">Contato</h3>
-        <ul class="space-y-2">
-          <li class="text-gray-400">contato@institutotribus.com.br</li>
-          <li class="text-gray-400">(61) 99999-9999</li>
-          <li class="text-gray-400">Brasília - DF</li>
+        <ul class="space-y-2 text-gray-400">
+          <li><i class="fas fa-envelope mr-2"></i> contato@institutotribus.com.br</li>
+          <li><i class="fas fa-phone mr-2"></i> (61) 99999-9999</li>
+          <li><i class="fas fa-map-marker-alt mr-2"></i> Brasília - DF</li>
         </ul>
       </div>
-      
-      <!-- Redes sociais -->
+
+      <!-- Redes Sociais -->
       <div>
         <h3 class="text-xl font-bold mb-4">Redes Sociais</h3>
-        <div class="flex space-x-4 text-2xl">
-          <a href="https://www.instagram.com/domingueira_moto_rock" target="_blank" class="text-gray-400 hover:text-white">
-            <i class="fab fa-instagram"></i>
-          </a>
-          <a href="https://www.instagram.com/instituto_tribus" target="_blank" class="text-gray-400 hover:text-white">
-            <i class="fab fa-instagram"></i>
-          </a>
-          <a href="https://www.youtube.com/@DomingueiraMotoRock" target="_blank" class="text-gray-400 hover:text-white">
-            <i class="fab fa-youtube"></i>
-          </a>
-          <a href="#" class="text-gray-400 hover:text-white">
-            <i class="fab fa-facebook"></i>
-          </a>
+        <div class="flex space-x-4 text-2xl text-gray-400">
+          <a href="https://www.instagram.com/domingueira_moto_rock" target="_blank" class="hover:text-white"><i class="fab fa-instagram"></i></a>
+          <a href="https://www.instagram.com/instituto_tribus" target="_blank" class="hover:text-white"><i class="fab fa-instagram"></i></a>
+          <a href="https://www.youtube.com/@DomingueiraMotoRock" target="_blank" class="hover:text-white"><i class="fab fa-youtube"></i></a>
+          <a href="#" class="hover:text-white"><i class="fab fa-facebook"></i></a>
         </div>
       </div>
-      
+
     </div>
 
-    <div class="border-t border-gray-800 pt-8 text-center text-gray-400">
+    <div class="border-t border-gray-800 pt-8 text-center text-gray-400 text-sm">
       <p>&copy; 2023 Instituto Tribus. Todos os direitos reservados. CNPJ: 50.903.480/0001-79</p>
     </div>
   </div>
 </footer>
-
-
