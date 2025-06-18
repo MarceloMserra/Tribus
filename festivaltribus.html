@@ -1,0 +1,774 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Festival Tribus - Acelerando Corações com Cultura e Inclusão</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat:wght@400;700;900&display=swap');
+        
+        :root {
+            --neon-purple: #bc13fe;
+            --neon-blue: #4dccff;
+            --neon-red: #ff3131;
+            --neon-yellow: #fff01f;
+        }
+        
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background-color: #0a0a0a;
+            color: white;
+            overflow-x: hidden;
+        }
+        
+        .title-font {
+            font-family: 'Bebas Neue', cursive;
+        }
+        
+        .hero-video {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: -1;
+            opacity: 0.7;
+        }
+        
+        .hero-overlay {
+            background: linear-gradient(to bottom, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0.5) 50%, rgba(0,0,0,0.8) 100%);
+        }
+        
+        .neon-text-purple {
+            text-shadow: 0 0 5px var(--neon-purple), 0 0 10px var(--neon-purple), 0 0 15px var(--neon-purple);
+            color: white;
+        }
+        
+        .neon-text-blue {
+            text-shadow: 0 0 5px var(--neon-blue), 0 0 10px var(--neon-blue), 0 0 15px var(--neon-blue);
+            color: white;
+        }
+        
+        .neon-text-red {
+            text-shadow: 0 0 5px var(--neon-red), 0 0 10px var(--neon-red), 0 0 15px var(--neon-red);
+            color: white;
+        }
+        
+        .neon-border-purple {
+            box-shadow: 0 0 10px var(--neon-purple), 0 0 20px var(--neon-purple), inset 0 0 10px var(--neon-purple);
+            border: 1px solid var(--neon-purple);
+        }
+        
+        .neon-border-blue {
+            box-shadow: 0 0 10px var(--neon-blue), 0 0 20px var(--neon-blue), inset 0 0 10px var(--neon-blue);
+            border: 1px solid var(--neon-blue);
+        }
+        
+        .neon-border-red {
+            box-shadow: 0 0 10px var(--neon-red), 0 0 20px var(--neon-red), inset 0 0 10px var(--neon-red);
+            border: 1px solid var(--neon-red);
+        }
+        
+        .neon-border-yellow {
+            box-shadow: 0 0 10px var(--neon-yellow), 0 0 20px var(--neon-yellow), inset 0 0 10px var(--neon-yellow);
+            border: 1px solid var(--neon-yellow);
+        }
+        
+        .pulse {
+            animation: pulse 2s infinite;
+        }
+        
+        @keyframes pulse {
+            0% {
+                box-shadow: 0 0 0 0 rgba(188, 19, 254, 0.7);
+            }
+            70% {
+                box-shadow: 0 0 0 10px rgba(188, 19, 254, 0);
+            }
+            100% {
+                box-shadow: 0 0 0 0 rgba(188, 19, 254, 0);
+            }
+        }
+        
+        .fade-in {
+            animation: fadeIn 1.5s ease-in;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        
+        .glow-hover:hover {
+            transform: scale(1.05);
+            transition: all 0.3s ease;
+        }
+        
+        .gallery-item {
+            transition: all 0.3s ease;
+        }
+        
+        .gallery-item:hover {
+            transform: scale(1.03);
+            z-index: 10;
+        }
+        
+        .road-line {
+            position: relative;
+        }
+        
+        .road-line::after {
+            content: '';
+            position: absolute;
+            bottom: -20px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80%;
+            height: 3px;
+            background: linear-gradient(90deg, transparent, var(--neon-purple), transparent);
+            box-shadow: 0 0 10px var(--neon-purple);
+        }
+    </style>
+</head>
+<body>
+    <!-- Header Section -->
+    <header class="relative h-screen flex items-center justify-center overflow-hidden">
+        <video autoplay muted loop class="hero-video">
+            <source src="https://assets.mixkit.co/videos/preview/mixkit-motorcyclist-driving-on-a-night-road-15845-large.mp4" type="video/mp4">
+        </video>
+        <div class="hero-overlay absolute inset-0"></div>
+        
+        <div class="absolute top-0 left-0 right-0 py-4 px-6 md:px-12 flex justify-between items-center">
+            <div class="flex items-center">
+                <img src="https://via.placeholder.com/80x80" alt="Logo Instituto Tribus" class="h-12 md:h-16 neon-border-purple rounded-full">
+                <span class="ml-3 text-xl md:text-2xl font-bold neon-text-purple title-font">INSTITUTO TRIBUS</span>
+            </div>
+            <nav class="hidden md:block">
+                <ul class="flex space-x-8">
+                    <li><a href="#about" class="text-white hover:text-purple-300 transition">Sobre</a></li>
+                    <li><a href="#gallery" class="text-white hover:text-purple-300 transition">Galeria</a></li>
+                    <li><a href="#kids" class="text-white hover:text-purple-300 transition">Espaço Kids</a></li>
+                    <li><a href="#attractions" class="text-white hover:text-purple-300 transition">Atrações</a></li>
+                    <li><a href="#contact" class="text-white hover:text-purple-300 transition">Contato</a></li>
+                </ul>
+            </nav>
+            <button class="md:hidden text-white">
+                <i class="fas fa-bars text-2xl"></i>
+            </button>
+        </div>
+        
+        <div class="container mx-auto px-6 z-10 text-center fade-in">
+            <h1 class="text-5xl md:text-7xl lg:text-8xl font-bold mb-4 neon-text-purple title-font">FESTIVAL TRIBUS</h1>
+            <h2 class="text-2xl md:text-3xl lg:text-4xl mb-8 neon-text-blue">Acelerando Corações com Cultura e Inclusão</h2>
+            <p class="text-xl md:text-2xl mb-12 max-w-3xl mx-auto neon-text-red">Mais que um evento, um movimento de transformação social.</p>
+            <a href="#contact" class="inline-block px-8 py-4 bg-purple-600 hover:bg-purple-700 text-white font-bold rounded-full neon-border-purple pulse glow-hover">
+                FAÇA PARTE DESSA JORNADA!
+            </a>
+        </div>
+    </header>
+
+    <!-- Quote Section -->
+    <section class="py-16 bg-black">
+        <div class="container mx-auto px-6 text-center">
+            <p class="text-2xl md:text-3xl lg:text-4xl font-bold neon-text-purple italic fade-in">
+                "Na estrada da vida, cada curva é uma nova oportunidade."
+            </p>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-20 bg-gradient-to-b from-black to-gray-900">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-5xl font-bold mb-4 neon-text-blue title-font road-line">SOBRE O PROJETO</h2>
+            </div>
+            
+            <div class="flex flex-col lg:flex-row items-center gap-12">
+                <div class="lg:w-1/2 relative">
+                    <div class="neon-border-blue rounded-xl overflow-hidden p-1 glow-hover">
+                        <img src="https://images.unsplash.com/photo-1517457373958-b7bdd4587205?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1469&q=80" alt="Festival Tribus" class="w-full h-auto rounded-lg">
+                    </div>
+                    <div class="absolute -bottom-6 -right-6 bg-black p-4 rounded-full neon-border-yellow">
+                        <i class="fas fa-motorcycle text-3xl text-yellow-300"></i>
+                    </div>
+                </div>
+                
+                <div class="lg:w-1/2">
+                    <p class="text-lg md:text-xl mb-8">
+                        O <span class="font-bold neon-text-purple">Festival Tribus</span> é uma iniciativa cultural e social itinerante, que percorre diferentes regiões administrativas do Distrito Federal levando cultura biker, arte urbana, shows, oficinas, inclusão e entretenimento gratuito. Nosso objetivo é democratizar o acesso à cultura e fortalecer os laços comunitários.
+                    </p>
+                    
+                    <div class="grid grid-cols-2 md:grid-cols-3 gap-4">
+                        <div class="bg-gray-800 p-4 rounded-lg text-center neon-border-purple hover:neon-border-blue transition glow-hover">
+                            <i class="fas fa-music text-3xl mb-2 text-purple-400"></i>
+                            <h3 class="font-bold">Cultura</h3>
+                        </div>
+                        <div class="bg-gray-800 p-4 rounded-lg text-center neon-border-purple hover:neon-border-blue transition glow-hover">
+                            <i class="fas fa-umbrella-beach text-3xl mb-2 text-blue-400"></i>
+                            <h3 class="font-bold">Turismo</h3>
+                        </div>
+                        <div class="bg-gray-800 p-4 rounded-lg text-center neon-border-purple hover:neon-border-blue transition glow-hover">
+                            <i class="fas fa-lightbulb text-3xl mb-2 text-yellow-400"></i>
+                            <h3 class="font-bold">Economia Criativa</h3>
+                        </div>
+                        <div class="bg-gray-800 p-4 rounded-lg text-center neon-border-purple hover:neon-border-blue transition glow-hover">
+                            <i class="fas fa-hands-helping text-3xl mb-2 text-green-400"></i>
+                            <h3 class="font-bold">Inclusão Social</h3>
+                        </div>
+                        <div class="bg-gray-800 p-4 rounded-lg text-center neon-border-purple hover:neon-border-blue transition glow-hover">
+                            <i class="fas fa-traffic-light text-3xl mb-2 text-red-400"></i>
+                            <h3 class="font-bold">Segurança no Trânsito</h3>
+                        </div>
+                        <div class="bg-gray-800 p-4 rounded-lg text-center neon-border-purple hover:neon-border-blue transition glow-hover">
+                            <i class="fas fa-users text-3xl mb-2 text-pink-400"></i>
+                            <h3 class="font-bold">Comunidade</h3>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Objectives Section -->
+    <section class="py-20 bg-gray-900">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-5xl font-bold mb-4 neon-text-red title-font road-line">OBJETIVOS DO FESTIVAL</h2>
+            </div>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <div class="bg-black p-6 rounded-xl neon-border-blue glow-hover h-full">
+                    <div class="text-blue-400 mb-4">
+                        <i class="fas fa-landmark text-5xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Fortalecer a cultura local</h3>
+                    <p>Promovendo artistas e manifestações culturais da região, valorizando nossa identidade.</p>
+                </div>
+                
+                <div class="bg-black p-6 rounded-xl neon-border-purple glow-hover h-full">
+                    <div class="text-purple-400 mb-4">
+                        <i class="fas fa-wheelchair text-5xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Promover a inclusão</h3>
+                    <p>Crianças, jovens, PCDs e famílias encontrando espaço para convivência e diversão.</p>
+                </div>
+                
+                <div class="bg-black p-6 rounded-xl neon-border-red glow-hover h-full">
+                    <div class="text-red-400 mb-4">
+                        <i class="fas fa-car-crash text-5xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Conscientização no trânsito</h3>
+                    <p>Educação e sensibilização para reduzir acidentes e promover direção responsável.</p>
+                </div>
+                
+                <div class="bg-black p-6 rounded-xl neon-border-yellow glow-hover h-full">
+                    <div class="text-yellow-400 mb-4">
+                        <i class="fas fa-store text-5xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Empreendedorismo local</h3>
+                    <p>Oficinas e feiras para estimular pequenos negócios e a economia criativa.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Quote Section -->
+    <section class="py-16 bg-black">
+        <div class="container mx-auto px-6 text-center">
+            <p class="text-2xl md:text-3xl lg:text-4xl font-bold neon-text-blue italic fade-in">
+                "Mais do que motores e velocidade, um encontro de histórias."
+            </p>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section id="gallery" class="py-20 bg-gradient-to-b from-gray-900 to-black">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-5xl font-bold mb-4 neon-text-purple title-font road-line">GALERIA</h2>
+                <p class="text-xl max-w-3xl mx-auto">Momentos inesquecíveis das últimas edições do Festival Tribus</p>
+            </div>
+            
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div class="gallery-item rounded-xl overflow-hidden neon-border-blue">
+                    <img src="https://images.unsplash.com/photo-1517457210348-703079e57d4b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Motociclistas" class="w-full h-64 object-cover">
+                    <div class="p-4 bg-gray-900">
+                        <h3 class="font-bold text-lg">Tribo das Motos</h3>
+                        <p class="text-sm text-gray-300">Encontro de motociclistas de todas as tribos</p>
+                    </div>
+                </div>
+                
+                <div class="gallery-item rounded-xl overflow-hidden neon-border-purple">
+                    <img src="https://images.unsplash.com/photo-1492684223066-81342ee5ff30?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Show ao vivo" class="w-full h-64 object-cover">
+                    <div class="p-4 bg-gray-900">
+                        <h3 class="font-bold text-lg">Palco Principal</h3>
+                        <p class="text-sm text-gray-300">Artistas locais brilhando sob as luzes do festival</p>
+                    </div>
+                </div>
+                
+                <div class="gallery-item rounded-xl overflow-hidden neon-border-red">
+                    <img src="https://images.unsplash.com/photo-1540575467063-178a50c2df87?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Famílias" class="w-full h-64 object-cover">
+                    <div class="p-4 bg-gray-900">
+                        <h3 class="font-bold text-lg">Famílias Unidas</h3>
+                        <p class="text-sm text-gray-300">Diversão para todas as idades</p>
+                    </div>
+                </div>
+                
+                <div class="gallery-item rounded-xl overflow-hidden neon-border-yellow">
+                    <img src="https://images.unsplash.com/photo-1569517282132-25d22f4573e6?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1433&q=80" alt="Carros tunados" class="w-full h-64 object-cover">
+                    <div class="p-4 bg-gray-900">
+                        <h3 class="font-bold text-lg">Exposição de Carros</h3>
+                        <p class="text-sm text-gray-300">A arte sobre rodas</p>
+                    </div>
+                </div>
+                
+                <div class="gallery-item rounded-xl overflow-hidden neon-border-blue">
+                    <img src="https://images.unsplash.com/photo-1501281330705-5f376aa0c024?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Oficinas" class="w-full h-64 object-cover">
+                    <div class="p-4 bg-gray-900">
+                        <h3 class="font-bold text-lg">Oficinas Criativas</h3>
+                        <p class="text-sm text-gray-300">Aprendizado e diversão juntos</p>
+                    </div>
+                </div>
+                
+                <div class="gallery-item rounded-xl overflow-hidden neon-border-purple">
+                    <img src="https://images.unsplash.com/photo-1540039155733-5bb30b53aa14?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1374&q=80" alt="Arte urbana" class="w-full h-64 object-cover">
+                    <div class="p-4 bg-gray-900">
+                        <h3 class="font-bold text-lg">Arte Urbana</h3>
+                        <p class="text-sm text-gray-300">Expressão artística nas ruas</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="mt-12 text-center">
+                <button class="px-6 py-3 bg-purple-600 hover:bg-purple-700 text-white font-bold rounded-full neon-border-purple glow-hover">
+                    VER MAIS FOTOS
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Kids Section -->
+    <section id="kids" class="py-20 bg-black">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-5xl font-bold mb-4 neon-text-yellow title-font road-line">ESPAÇO KIDS E ACESSIBILIDADE</h2>
+            </div>
+            
+            <div class="flex flex-col lg:flex-row items-center gap-12">
+                <div class="lg:w-1/2">
+                    <div class="grid grid-cols-2 gap-4 mb-8">
+                        <div class="neon-border-yellow rounded-lg overflow-hidden">
+                            <img src="https://images.unsplash.com/photo-1588072432836-e10032774350?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1472&q=80" alt="Crianças brincando" class="w-full h-48 object-cover">
+                        </div>
+                        <div class="neon-border-purple rounded-lg overflow-hidden">
+                            <img src="https://images.unsplash.com/photo-1542816417-098367527836?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1374&q=80" alt="Contação de histórias" class="w-full h-48 object-cover">
+                        </div>
+                        <div class="neon-border-blue rounded-lg overflow-hidden">
+                            <img src="https://images.unsplash.com/photo-1542621334-a254cf47733d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Oficina de arte" class="w-full h-48 object-cover">
+                        </div>
+                        <div class="neon-border-red rounded-lg overflow-hidden">
+                            <img src="https://images.unsplash.com/photo-1588075597172-0d2ee9736867?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Brinquedos educativos" class="w-full h-48 object-cover">
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="lg:w-1/2">
+                    <h3 class="text-3xl font-bold mb-6 neon-text-yellow">Um espaço feito para todos</h3>
+                    <p class="mb-6">
+                        O Festival conta com <span class="font-bold text-yellow-300">espaço kids</span> com atividades lúdicas, contação de histórias, oficinas de arte e brinquedos educativos. Um ambiente seguro e monitorado para que as crianças possam se divertir enquanto os adultos aproveitam o festival.
+                    </p>
+                    <p class="mb-6">
+                        Temos estrutura pensada para <span class="font-bold text-purple-300">acessibilidade</span>, com intérprete de libras nos shows, comunicação clara e equipe treinada para atender pessoas com deficiência. O Festival Tribus é para todos!
+                    </p>
+                    
+                    <div class="bg-gray-900 p-6 rounded-xl neon-border-blue">
+                        <div class="flex items-start">
+                            <div class="mr-4 text-blue-400">
+                                <i class="fas fa-universal-access text-4xl"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-lg mb-2">Acessibilidade Total</h4>
+                                <p class="text-sm">Rampas de acesso, banheiros adaptados, equipe especializada e muito mais para garantir a inclusão de todos.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Attractions Section -->
+    <section id="attractions" class="py-20 bg-gradient-to-b from-black to-gray-900">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-5xl font-bold mb-4 neon-text-red title-font road-line">PALCOS E ATRAÇÕES</h2>
+                <p class="text-xl max-w-3xl mx-auto">Uma estrutura profissional para valorizar nossos artistas</p>
+            </div>
+            
+            <div class="flex flex-col lg:flex-row gap-12 items-center mb-16">
+                <div class="lg:w-1/2">
+                    <div class="neon-border-red rounded-xl overflow-hidden glow-hover">
+                        <img src="https://images.unsplash.com/photo-1470229722913-7c0e2dbbafd3?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Palco do festival" class="w-full h-auto">
+                    </div>
+                </div>
+                
+                <div class="lg:w-1/2">
+                    <h3 class="text-3xl font-bold mb-6 neon-text-red">Valorizamos artistas e músicos locais</h3>
+                    <p class="mb-6">
+                        Em todas as edições do Festival Tribus, damos espaço para talentos regionais se apresentarem em uma estrutura profissional, com palcos iluminados, sistema de som de qualidade e produção cuidadosa.
+                    </p>
+                    <p class="mb-6">
+                        Além dos shows musicais, o festival conta com diversas atrações como exposições de arte urbana, competições de motocicletas, food trucks com gastronomia local e muito mais.
+                    </p>
+                    
+                    <div class="grid grid-cols-2 gap-4">
+                        <div class="bg-black p-4 rounded-lg neon-border-blue text-center">
+                            <i class="fas fa-music text-3xl mb-2 text-blue-400"></i>
+                            <h4 class="font-bold">Shows</h4>
+                        </div>
+                        <div class="bg-black p-4 rounded-lg neon-border-purple text-center">
+                            <i class="fas fa-utensils text-3xl mb-2 text-purple-400"></i>
+                            <h4 class="font-bold">Food Trucks</h4>
+                        </div>
+                        <div class="bg-black p-4 rounded-lg neon-border-yellow text-center">
+                            <i class="fas fa-paint-brush text-3xl mb-2 text-yellow-400"></i>
+                            <h4 class="font-bold">Arte Urbana</h4>
+                        </div>
+                        <div class="bg-black p-4 rounded-lg neon-border-red text-center">
+                            <i class="fas fa-trophy text-3xl mb-2 text-red-400"></i>
+                            <h4 class="font-bold">Competições</h4>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="bg-black p-8 rounded-xl neon-border-purple">
+                <h3 class="text-2xl md:text-3xl font-bold mb-6 text-center neon-text-purple">Infraestrutura Completa</h3>
+                <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+                    <div class="text-center">
+                        <div class="text-purple-400 mb-3">
+                            <i class="fas fa-lightbulb text-4xl"></i>
+                        </div>
+                        <h4 class="font-bold mb-2">Palcos Iluminados</h4>
+                        <p class="text-sm">Estrutura profissional com iluminação LED de última geração</p>
+                    </div>
+                    <div class="text-center">
+                        <div class="text-blue-400 mb-3">
+                            <i class="fas fa-volume-up text-4xl"></i>
+                        </div>
+                        <h4 class="font-bold mb-2">Sistema de Som</h4>
+                        <p class="text-sm">Equipamentos profissionais para qualidade sonora impecável</p>
+                    </div>
+                    <div class="text-center">
+                        <div class="text-yellow-400 mb-3">
+                            <i class="fas fa-bolt text-4xl"></i>
+                        </div>
+                        <h4 class="font-bold mb-2">Geradores de Energia</h4>
+                        <p class="text-sm">Garantia de energia ininterrupta durante todo o evento</p>
+                    </div>
+                    <div class="text-center">
+                        <div class="text-red-400 mb-3">
+                            <i class="fas fa-first-aid text-4xl"></i>
+                        </div>
+                        <h4 class="font-bold mb-2">Segurança e Saúde</h4>
+                        <p class="text-sm">Equipe médica e de segurança preparada para qualquer situação</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Impact Section -->
+    <section class="py-20 bg-gray-900">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-5xl font-bold mb-4 neon-text-blue title-font road-line">IMPACTO SOCIAL</h2>
+                <p class="text-xl max-w-3xl mx-auto">O Festival Tribus transforma vidas e comunidades</p>
+            </div>
+            
+            <div class="grid md:grid-cols-2 gap-12 mb-16">
+                <div>
+                    <h3 class="text-3xl font-bold mb-6 neon-text-blue">Benefícios para a comunidade</h3>
+                    <p class="mb-6">
+                        O Festival Tribus vai além do entretenimento. Ele cria oportunidades, fortalece laços comunitários e deixa um legado positivo nas regiões por onde passa.
+                    </p>
+                    
+                    <div class="space-y-4">
+                        <div class="flex items-start">
+                            <div class="mr-4 text-blue-400">
+                                <i class="fas fa-users text-2xl"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold">Integração entre famílias</h4>
+                                <p class="text-sm">Espaços de convivência que unem gerações e criam memórias afetivas.</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <div class="mr-4 text-purple-400">
+                                <i class="fas fa-brain text-2xl"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold">Conscientização social</h4>
+                                <p class="text-sm">Temas importantes como segurança no trânsito e inclusão abordados de forma lúdica.</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <div class="mr-4 text-yellow-400">
+                                <i class="fas fa-landmark text-2xl"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold">Valorização cultural</h4>
+                                <p class="text-sm">Artistas e manifestações culturais locais ganham visibilidade e reconhecimento.</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <div class="mr-4 text-red-400">
+                                <i class="fas fa-map-marked-alt text-2xl"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold">Fomento ao turismo local</h4>
+                                <p class="text-sm">Movimentação econômica e divulgação dos atrativos regionais.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div>
+                    <div class="bg-black p-6 rounded-xl neon-border-blue mb-6">
+                        <div class="flex items-start">
+                            <div class="mr-4">
+                                <img src="https://via.placeholder.com/60x60" alt="Depoimento" class="rounded-full h-12 w-12">
+                            </div>
+                            <div>
+                                <p class="italic mb-2">"O Festival Tribus mudou a vida do meu filho. Ele tem autismo e encontrou no espaço kids um lugar onde se sente aceito e feliz. É emocionante ver o sorriso dele durante o evento."</p>
+                                <p class="font-bold text-blue-400">— Maria, mãe de Lucas</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="bg-black p-6 rounded-xl neon-border-purple mb-6">
+                        <div class="flex items-start">
+                            <div class="mr-4">
+                                <img src="https://via.placeholder.com/60x60" alt="Depoimento" class="rounded-full h-12 w-12">
+                            </div>
+                            <div>
+                                <p class="italic mb-2">"Como motociclista, sempre fui visto com preconceito. O Festival Tribus mostrou que somos uma comunidade que ama a cultura e quer contribuir com a sociedade."</p>
+                                <p class="font-bold text-purple-400">— Ricardo, motociclista</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="bg-black p-6 rounded-xl neon-border-yellow">
+                        <div class="flex items-start">
+                            <div class="mr-4">
+                                <img src="https://via.placeholder.com/60x60" alt="Depoimento" class="rounded-full h-12 w-12">
+                            </div>
+                            <div>
+                                <p class="italic mb-2">"Minha barraquinha de artesanato vendeu mais no Festival Tribus do que em um mês na feira. Esses eventos são vitais para pequenos empreendedores como eu."</p>
+                                <p class="font-bold text-yellow-400">— Ana, artesã</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="text-center">
+                <p class="text-2xl md:text-3xl font-bold neon-text-purple italic mb-8">
+                    "Um evento que acelera os corações."
+                </p>
+                <a href="#contact" class="inline-block px-8 py-4 bg-purple-600 hover:bg-purple-700 text-white font-bold rounded-full neon-border-purple pulse glow-hover">
+                    QUERO PARTICIPAR!
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Cities Section -->
+    <section class="py-20 bg-black">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-5xl font-bold mb-4 neon-text-red title-font road-line">CIDADES ATENDIDAS</h2>
+                <p class="text-xl max-w-3xl mx-auto">O Festival Tribus percorre diferentes regiões do Distrito Federal</p>
+            </div>
+            
+            <div class="relative">
+                <div class="hidden md:block absolute inset-0 flex items-center justify-center">
+                    <div class="h-full w-1 bg-gradient-to-b from-transparent via-purple-500 to-transparent opacity-30"></div>
+                </div>
+                
+                <div class="grid md:grid-cols-3 gap-8 relative z-10">
+                    <div class="bg-gray-900 p-8 rounded-xl neon-border-blue text-center glow-hover">
+                        <div class="text-blue-400 mb-4">
+                            <i class="fas fa-map-marker-alt text-5xl"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold mb-3">Ceilândia</h3>
+                        <p class="mb-4">Praça do Cidadão</p>
+                        <p class="text-sm">Domingos, das 10h às 21h</p>
+                    </div>
+                    
+                    <div class="bg-gray-900 p-8 rounded-xl neon-border-purple text-center glow-hover">
+                        <div class="text-purple-400 mb-4">
+                            <i class="fas fa-map-marker-alt text-5xl"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold mb-3">Taguatinga</h3>
+                        <p class="mb-4">Praça do Relógio</p>
+                        <p class="text-sm">Domingos, das 10h às 21h</p>
+                    </div>
+                    
+                    <div class="bg-gray-900 p-8 rounded-xl neon-border-red text-center glow-hover">
+                        <div class="text-red-400 mb-4">
+                            <i class="fas fa-map-marker-alt text-5xl"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold mb-3">Samambaia</h3>
+                        <p class="mb-4">Praça da QN 406</p>
+                        <p class="text-sm">Domingos, das 10h às 21h</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="mt-12 text-center">
+                <p class="text-lg mb-6">Em breve em mais regiões administrativas!</p>
+                <button class="px-6 py-3 bg-blue-600 hover:bg-blue-700 text-white font-bold rounded-full neon-border-blue glow-hover">
+                    QUERO O FESTIVAL NA MINHA CIDADE
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 bg-gradient-to-b from-gray-900 to-black">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-5xl font-bold mb-4 neon-text-yellow title-font road-line">CONTATO</h2>
+                <p class="text-xl max-w-3xl mx-auto">Entre em contato e faça parte do Festival Tribus</p>
+            </div>
+            
+            <div class="flex flex-col lg:flex-row gap-12">
+                <div class="lg:w-1/2">
+                    <form class="bg-black p-8 rounded-xl neon-border-purple">
+                        <div class="mb-6">
+                            <label for="name" class="block text-sm font-bold mb-2">Nome</label>
+                            <input type="text" id="name" class="w-full px-4 py-3 bg-gray-800 border border-gray-700 rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-500">
+                        </div>
+                        <div class="mb-6">
+                            <label for="email" class="block text-sm font-bold mb-2">E-mail</label>
+                            <input type="email" id="email" class="w-full px-4 py-3 bg-gray-800 border border-gray-700 rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-500">
+                        </div>
+                        <div class="mb-6">
+                            <label for="message" class="block text-sm font-bold mb-2">Mensagem</label>
+                            <textarea id="message" rows="4" class="w-full px-4 py-3 bg-gray-800 border border-gray-700 rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-500"></textarea>
+                        </div>
+                        <button type="submit" class="w-full px-6 py-3 bg-purple-600 hover:bg-purple-700 text-white font-bold rounded-full neon-border-purple glow-hover">
+                            ENVIAR MENSAGEM
+                        </button>
+                    </form>
+                </div>
+                
+                <div class="lg:w-1/2">
+                    <div class="bg-black p-8 rounded-xl neon-border-blue h-full">
+                        <h3 class="text-2xl font-bold mb-6 neon-text-blue">Como participar</h3>
+                        
+                        <div class="mb-8">
+                            <h4 class="font-bold text-lg mb-3">Para o público:</h4>
+                            <p class="mb-4">O Festival Tribus é totalmente gratuito! Basta comparecer no local e horário marcados para sua região.</p>
+                            <p>Traga sua família, amigos e muita energia positiva!</p>
+                        </div>
+                        
+                        <div class="mb-8">
+                            <h4 class="font-bold text-lg mb-3">Para artistas e expositores:</h4>
+                            <p class="mb-4">Temos espaços limitados para artistas, bandas, food trucks e expositores. Entre em contato para saber sobre as oportunidades.</p>
+                            <p>Valorizamos especialmente talentos locais e iniciativas comunitárias.</p>
+                        </div>
+                        
+                        <div class="mb-8">
+                            <h4 class="font-bold text-lg mb-3">Redes sociais:</h4>
+                            <div class="flex space-x-4">
+                                <a href="#" class="w-12 h-12 flex items-center justify-center bg-blue-600 rounded-full text-white text-xl hover:bg-blue-700 transition">
+                                    <i class="fab fa-facebook-f"></i>
+                                </a>
+                                <a href="#" class="w-12 h-12 flex items-center justify-center bg-pink-600 rounded-full text-white text-xl hover:bg-pink-700 transition">
+                                    <i class="fab fa-instagram"></i>
+                                </a>
+                                <a href="#" class="w-12 h-12 flex items-center justify-center bg-red-600 rounded-full text-white text-xl hover:bg-red-700 transition">
+                                    <i class="fab fa-youtube"></i>
+                                </a>
+                                <a href="#" class="w-12 h-12 flex items-center justify-center bg-green-600 rounded-full text-white text-xl hover:bg-green-700 transition">
+                                    <i class="fab fa-whatsapp"></i>
+                                </a>
+                            </div>
+                        </div>
+                        
+                        <div>
+                            <h4 class="font-bold text-lg mb-3">Patrocínios e parcerias:</h4>
+                            <p>Empresas interessadas em apoiar o Festival Tribus podem entrar em contato para conhecer nossas opções de parceria.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-black py-12">
+        <div class="container mx-auto px-6">
+            <div class="flex flex-col md:flex-row justify-between items-center mb-8">
+                <div class="flex items-center mb-6 md:mb-0">
+                    <img src="https://via.placeholder.com/80x80" alt="Logo Instituto Tribus" class="h-12 md:h-16 neon-border-purple rounded-full">
+                    <span class="ml-3 text-xl md:text-2xl font-bold neon-text-purple title-font">INSTITUTO TRIBUS</span>
+                </div>
+                
+                <div class="flex space-x-6">
+                    <a href="#" class="text-gray-400 hover:text-white transition">
+                        <i class="fab fa-facebook-f text-xl"></i>
+                    </a>
+                    <a href="#" class="text-gray-400 hover:text-white transition">
+                        <i class="fab fa-instagram text-xl"></i>
+                    </a>
+                    <a href="#" class="text-gray-400 hover:text-white transition">
+                        <i class="fab fa-youtube text-xl"></i>
+                    </a>
+                    <a href="#" class="text-gray-400 hover:text-white transition">
+                        <i class="fab fa-whatsapp text-xl"></i>
+                    </a>
+                </div>
+            </div>
+            
+            <div class="text-center mb-8">
+                <p class="text-xl neon-text-blue italic">
+                    "Celebre momentos especiais e construa memórias com o Festival Tribus."
+                </p>
+            </div>
+            
+            <div class="border-t border-gray-800 pt-8 text-center text-gray-500 text-sm">
+                <p>&copy; 2023 Instituto Tribus. Todos os direitos reservados.</p>
+                <p class="mt-2">O Festival Tribus é uma iniciativa cultural sem fins lucrativos.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Simple animation for elements when they come into view
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('fade-in');
+                }
+            });
+        }, {
+            threshold: 0.1
+        });
+
+        document.querySelectorAll('section').forEach(section => {
+            observer.observe(section);
+        });
+
+        // Mobile menu toggle (simplified for this example)
+        document.querySelector('header button').addEventListener('click', function() {
+            alert('Menu mobile seria implementado aqui em uma versão completa');
+        });
+    </script>
+</body>
+</html>
