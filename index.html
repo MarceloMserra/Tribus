@@ -1,81 +1,90 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Instituto Tribus - Transparência, Cultura e Inclusão Social</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <style>
-        .hero-overlay {
-            background-color: rgba(0, 0, 0, 0.5);
-        }
-        .value-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
-        }
-        .project-card {
-            transition: all 0.3s ease;
-        }
-        .project-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
-        }
-        .document-btn:hover {
-            transform: translateY(-3px);
-        }
-        .course-card:hover {
-            transform: translateY(-5px);
-        }
-        .nav-link {
-            position: relative;
-        }
-        .nav-link::after {
-            content: '';
-            position: absolute;
-            width: 0;
-            height: 2px;
-            bottom: 0;
-            left: 0;
-            background-color: #f97316;
-            transition: width 0.3s ease;
-        }
-        .nav-link:hover::after {
-            width: 100%;
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Instituto Tribus - Transparência, Cultura e Inclusão Social</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    html, body {
+      overflow-x: hidden;
+    }
+    .hero-overlay {
+      background-color: rgba(0, 0, 0, 0.5);
+    }
+    .value-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+    }
+    .project-card {
+      transition: all 0.3s ease;
+    }
+    .project-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+    }
+    .document-btn:hover {
+      transform: translateY(-3px);
+    }
+    .course-card:hover {
+      transform: translateY(-5px);
+    }
+    .nav-link {
+      position: relative;
+    }
+    .nav-link::after {
+      content: '';
+      position: absolute;
+      width: 0;
+      height: 2px;
+      bottom: 0;
+      left: 0;
+      background-color: #f97316;
+      transition: width 0.3s ease;
+    }
+    .nav-link:hover::after {
+      width: 100%;
+    }
+  </style>
 </head>
-<body class="font-sans bg-gray-50">
-    <!-- Header/Navbar -->
-    <header class="fixed w-full bg-white shadow-md z-50">
-       <div class="flex items-center space-x-4">
-            <img src="https://raw.githubusercontent.com/MarceloMserra/Tribus/main/Logotribus.png" alt="Logo Instituto Tribus" class="w-12 h-12 object-contain">
-            <div>
-                <h1 class="text-2xl font-bold text-blue-800">Instituto Tribus</h1>
-                <p class="text-sm text-orange-500">Transparência, Cultura e Inclusão Social</p>
-            </div>
-            <nav class="hidden md:block">
-                <ul class="flex space-x-8">
-                    <li><a href="#quem-somos" class="nav-link text-gray-700 hover:text-orange-500">Quem Somos</a></li>
-                    <li><a href="#projetos" class="nav-link text-gray-700 hover:text-orange-500">Projetos</a></li>
-                    <li><a href="#cursos" class="nav-link text-gray-700 hover:text-orange-500">Cursos</a></li>
-                    <li><a href="#impacto" class="nav-link text-gray-700 hover:text-orange-500">Impacto</a></li>
-                    <li><a href="#documentos" class="nav-link text-gray-700 hover:text-orange-500">Documentos</a></li>
-                    <li><a href="#contato" class="nav-link text-gray-700 hover:text-orange-500">Contato</a></li>
-                </ul>
-            </nav>
-            <button class="md:hidden text-gray-700">
-                <i class="fas fa-bars text-2xl"></i>
-            </button>
-        </div>
-    </header>
 
-<!-- Hero Section -->
-<section class="relative w-full bg-black">
+<body class="font-sans bg-gray-50 overflow-x-hidden">
+  <!-- Header/Navbar -->
+  <header class="fixed w-full bg-white shadow-md z-50">
+    <div class="max-w-screen-xl mx-auto flex items-center justify-between px-4 py-2 space-x-4">
+      <div class="flex items-center space-x-4">
+        <img src="https://raw.githubusercontent.com/MarceloMserra/Tribus/main/Logotribus.png"
+             alt="Logo Instituto Tribus"
+             class="w-12 h-12 object-contain">
+        <div>
+          <h1 class="text-2xl font-bold text-blue-800">Instituto Tribus</h1>
+          <p class="text-sm text-orange-500">Transparência, Cultura e Inclusão Social</p>
+        </div>
+      </div>
+      <nav class="hidden md:block">
+        <ul class="flex space-x-8">
+          <li><a href="#quem-somos" class="nav-link text-gray-700 hover:text-orange-500">Quem Somos</a></li>
+          <li><a href="#projetos" class="nav-link text-gray-700 hover:text-orange-500">Projetos</a></li>
+          <li><a href="#cursos" class="nav-link text-gray-700 hover:text-orange-500">Cursos</a></li>
+          <li><a href="#impacto" class="nav-link text-gray-700 hover:text-orange-500">Impacto</a></li>
+          <li><a href="#documentos" class="nav-link text-gray-700 hover:text-orange-500">Documentos</a></li>
+          <li><a href="#contato" class="nav-link text-gray-700 hover:text-orange-500">Contato</a></li>
+        </ul>
+      </nav>
+      <button class="md:hidden text-gray-700">
+        <i class="fas fa-bars text-2xl"></i>
+      </button>
+    </div>
+  </header>
+
+<!-- Hero Section - imagem preenche toda a tela -->
+<section class="relative w-full h-screen overflow-hidden">
   <img src="https://raw.githubusercontent.com/MarceloMserra/Tribus/refs/heads/main/inicial1.png"
-       class="w-full object-contain max-h-[100vh] mx-auto" alt="Imagem do Instituto Tribus" />
+       class="absolute inset-0 w-full h-full object-cover" alt="Imagem de fundo" />
   
-  <div class="absolute inset-0 flex flex-col items-center justify-center text-center px-4 text-white bg-black bg-opacity-60">
+  <!-- Sobreposição escura + conteúdo -->
+  <div class="absolute inset-0 bg-black bg-opacity-60 flex flex-col items-center justify-center text-center px-4 text-white">
     <h1 class="text-3xl md:text-5xl font-bold mb-4">Transformando realidades</h1>
     <p class="text-lg md:text-2xl mb-6">por meio da cultura, da capacitação e do amor ao próximo.</p>
     <a href="#quem-somos" class="bg-orange-500 hover:bg-orange-600 text-white font-bold py-3 px-6 rounded-full transition duration-300">
@@ -83,6 +92,7 @@
     </a>
   </div>
 </section>
+
 
 
     <!-- Quem Somos Section -->
