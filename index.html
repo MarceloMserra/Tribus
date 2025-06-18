@@ -1,6 +1,9 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
+
+  <!-- AOS CSS -->
+  <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Instituto Tribus - Transparência, Cultura e Inclusão Social</title>
@@ -48,6 +51,14 @@
     }
   </style>
 </head>
+<!-- AOS JS -->
+<script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+<script>
+  AOS.init({
+    duration: 800,
+    once: true,
+  });
+</script>
 
 <body class="font-sans bg-gray-50 overflow-x-hidden">
   <!-- Header/Navbar -->
@@ -97,39 +108,40 @@
   <div class="container mx-auto px-4">
     
     <!-- Título -->
-    <div class="text-center mb-16">
-      <h2 class="text-3xl md:text-4xl font-bold text-blue-800 mb-4 animate-fade-in">Quem Somos</h2>
-      <div class="w-20 h-1 bg-orange-500 mx-auto animate-fade-in"></div>
+    <div class="text-center mb-16" data-aos="fade-up">
+      <h2 class="text-4xl font-extrabold text-blue-800 mb-4">Quem Somos</h2>
+      <div class="w-24 h-1 bg-orange-500 mx-auto"></div>
     </div>
     
-    <!-- Bloco de imagem + texto -->
-    <div class="flex flex-col lg:flex-row items-center gap-12 animate-fade-in">
+    <!-- Conteúdo -->
+    <div class="flex flex-col lg:flex-row items-center gap-12">
+      
       <!-- Imagem -->
-      <div class="lg:w-1/2">
+      <div class="lg:w-1/2 w-full" data-aos="fade-right">
         <img src="https://raw.githubusercontent.com/MarceloMserra/Tribus/refs/heads/main/Quemsomos00.png"
              alt="Equipe do Instituto Tribus"
-             class="rounded-lg shadow-xl w-full h-auto">
+             class="rounded-xl shadow-2xl w-full h-auto">
       </div>
       
-      <!-- Texto com botão "ver mais/ver menos" -->
-      <div class="lg:w-1/2 text-gray-700 space-y-4">
-        <div id="texto-truncado" class="max-h-96 overflow-hidden transition-all duration-500 ease-in-out">
+      <!-- Texto -->
+      <div class="lg:w-1/2 w-full text-gray-700 text-lg leading-relaxed" data-aos="fade-left">
+        <div id="texto-truncado" class="max-h-[480px] overflow-hidden transition-all duration-500 ease-in-out space-y-6">
           <p>
-            O Instituto Tribus nasceu da paixão por ajudar o próximo, unir culturas e acelerar corações por meio da inclusão, da arte e da solidariedade. Fundado oficialmente a partir da mobilização espontânea do evento <strong>Domingueira Moto Rock</strong>, em 2019, o Instituto se consolidou como uma <strong>Organização da Sociedade Civil sem fins lucrativos</strong>, comprometida com a transformação social de comunidades em situação de vulnerabilidade.
+            O <strong>Instituto Tribus</strong> nasceu da paixão por ajudar o próximo, unir culturas e acelerar corações por meio da inclusão, da arte e da solidariedade. Fundado a partir da mobilização espontânea do evento <strong class="text-blue-800">Domingueira Moto Rock</strong>, em 2019, hoje somos uma <span class="font-bold text-blue-800">Organização da Sociedade Civil sem fins lucrativos</span>, comprometida com a transformação social de comunidades vulneráveis.
           </p>
           <p>
-            Nosso propósito é claro: <strong>cuidar de pessoas</strong>. Atuamos com dedicação junto a mulheres, crianças, adolescentes, pessoas com deficiência, idosos e famílias inteiras que enfrentam barreiras sociais, econômicas e emocionais. Por meio de <strong>ações culturais, sociais, educativas e profissionais</strong>, buscamos devolver dignidade, despertar talentos e construir novos caminhos de esperança.
+            Nosso propósito é claro: <span class="font-bold text-orange-500">cuidar de pessoas</span>. Atuamos com dedicação junto a mulheres, crianças, adolescentes, pessoas com deficiência, idosos e famílias que enfrentam dificuldades. Por meio de <span class="font-semibold text-blue-700">ações culturais, sociais, educativas e profissionais</span>, buscamos devolver dignidade, despertar talentos e construir novas histórias de esperança.
           </p>
           <p>
-            <strong>Nossa missão:</strong> Promover a inclusão e o desenvolvimento humano por meio da cultura, da capacitação profissional e da valorização de grupos historicamente marginalizados. Trabalhamos com amor, respeito e empatia, sempre baseados em nossos pilares: <em>Igualdade, Respeito, Honra e Irmandade</em>.
+            <span class="font-bold">Nossa missão:</span> promover a inclusão e o desenvolvimento humano por meio da cultura, da capacitação e da valorização de grupos historicamente marginalizados. Trabalhamos com <span class="italic">amor, respeito e empatia</span>, fundamentados em nossos pilares: <span class="italic text-gray-600">Igualdade, Respeito, Honra e Irmandade</span>.
           </p>
           <p>
-            <strong>Nossa visão:</strong> Ser referência como agente de transformação social no Brasil, criando oportunidades e construindo uma sociedade mais justa, acessível e sustentável para todos.
+            <span class="font-bold">Nossa visão:</span> ser referência nacional em impacto social, criando oportunidades reais e construindo uma sociedade mais justa, acessível e sustentável para todos.
           </p>
           <p>
-            <strong>Nossas ações transformadoras incluem:</strong> Capacitação profissional de mulheres, projetos culturais como o <em>Domingueira Moto Rock</em>, musicalização infantil, cursos como pilotagem de drones, projetos ambientais como o <em>Distrito Animal</em>, e eventos inclusivos como o <em>Tribus Festival</em>.
+            <span class="font-bold">Nossas ações transformadoras incluem:</span> capacitação de mulheres, cursos como pilotagem de drones, musicalização infantil, projetos ambientais como o <em>Distrito Animal</em> e eventos de impacto como o <strong class="text-blue-800">Tribus Festival</strong>.
           </p>
-          <div class="bg-blue-50 p-6 rounded-lg border-l-4 border-orange-500">
+          <div class="bg-blue-50 p-5 rounded-lg border-l-4 border-orange-500">
             <p class="text-blue-800 font-semibold italic text-lg">
               "Grandes batalhas são dadas a grandes guerreiros. E nós não lutamos sozinhos. Somos uma tribo, somos o Instituto Tribus!"
             </p>
@@ -137,7 +149,8 @@
         </div>
 
         <!-- Botão dinâmico -->
-        <button id="botao-toggle" onclick="expandirTexto()" class="mt-4 inline-block px-6 py-2 bg-orange-500 text-white font-semibold rounded hover:bg-orange-600 transition">
+        <button id="botao-toggle" onclick="expandirTexto()"
+          class="mt-6 inline-block px-6 py-2 bg-orange-500 text-white font-bold rounded hover:bg-orange-600 transition">
           Ver mais
         </button>
       </div>
@@ -145,19 +158,20 @@
   </div>
 </section>
 
-<!-- Script para expandir texto e trocar texto do botão -->
+<!-- Script do botão Ver mais/menos -->
 <script>
   function expandirTexto() {
     const texto = document.getElementById('texto-truncado');
     const botao = document.getElementById('botao-toggle');
-    texto.classList.toggle('max-h-96');
-    if (texto.classList.contains('max-h-96')) {
+    texto.classList.toggle('max-h-[480px]');
+    if (texto.classList.contains('max-h-[480px]')) {
       botao.textContent = 'Ver mais';
     } else {
       botao.textContent = 'Ver menos';
     }
   }
 </script>
+
      
     <!-- Galeria com 2 fotos e 2 vídeos -->
     <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mt-12">
