@@ -1,0 +1,735 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vozes da Quebrada | Estúdio Comunitário</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Anton&family=Bebas+Neue&family=Urbanist:wght@400;700;900&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --color-primary: #8B0000;
+            --color-secondary: #2F4F4F;
+            --color-accent: #9370DB;
+        }
+        
+        body {
+            font-family: 'Urbanist', sans-serif;
+            background-color: #111;
+            color: #eee;
+            scroll-behavior: smooth;
+        }
+        
+        .title-font {
+            font-family: 'Anton', sans-serif;
+            letter-spacing: 1px;
+        }
+        
+        .subtitle-font {
+            font-family: 'Bebas Neue', cursive;
+            letter-spacing: 1.5px;
+        }
+        
+        .hero-bg {
+            background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('https://images.unsplash.com/photo-1598488035139-bdbb2231ce04?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80');
+            background-size: cover;
+            background-position: center;
+        }
+        
+        .graffiti-border {
+            border-left: 5px solid var(--color-primary);
+            position: relative;
+        }
+        
+        .graffiti-border::before {
+            content: "";
+            position: absolute;
+            left: -15px;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 10px;
+            height: 10px;
+            background-color: var(--color-accent);
+            border-radius: 50%;
+        }
+        
+        .card-hover:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(139, 0, 0, 0.3);
+        }
+        
+        .pulse {
+            animation: pulse 2s infinite;
+        }
+        
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
+        }
+        
+        .audio-wave {
+            position: relative;
+            height: 50px;
+            width: 100%;
+            overflow: hidden;
+        }
+        
+        .audio-wave::before {
+            content: "";
+            position: absolute;
+            height: 2px;
+            width: 100%;
+            background: linear-gradient(90deg, transparent, var(--color-primary), transparent);
+            animation: wave 3s linear infinite;
+        }
+        
+        @keyframes wave {
+            0% { transform: translateX(-100%); }
+            100% { transform: translateX(100%); }
+        }
+        
+        .timeline-item::before {
+            content: "";
+            position: absolute;
+            left: -20px;
+            top: 0;
+            width: 15px;
+            height: 15px;
+            border-radius: 50%;
+            background-color: var(--color-primary);
+        }
+        
+        .studio-equipment::before {
+            content: "";
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 3px;
+            height: 100%;
+            background-color: var(--color-primary);
+        }
+    </style>
+</head>
+<body class="bg-gray-900">
+    <!-- Navigation -->
+    <nav class="bg-black bg-opacity-90 fixed w-full z-50 border-b border-gray-800">
+        <div class="container mx-auto px-4 py-3 flex justify-between items-center">
+            <div class="flex items-center">
+                <i class="fas fa-microphone-alt text-2xl text-red-700 mr-2"></i>
+                <span class="title-font text-xl text-white">VOZES DA QUEBRADA</span>
+            </div>
+            <div class="hidden md:flex space-x-6">
+                <a href="#sobre" class="text-gray-300 hover:text-white transition">Sobre</a>
+                <a href="#estrutura" class="text-gray-300 hover:text-white transition">Estrutura</a>
+                <a href="#atividades" class="text-gray-300 hover:text-white transition">Atividades</a>
+                <a href="#galeria" class="text-gray-300 hover:text-white transition">Galeria</a>
+                <a href="#contato" class="text-gray-300 hover:text-white transition">Contato</a>
+            </div>
+            <button class="md:hidden text-white">
+                <i class="fas fa-bars text-2xl"></i>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero-bg min-h-screen flex items-center justify-center pt-16">
+        <div class="container mx-auto px-4 text-center">
+            <div class="pulse mb-8">
+                <h1 class="title-font text-5xl md:text-7xl lg:text-8xl text-white mb-4">VOZES DA QUEBRADA</h1>
+                <div class="audio-wave mb-6"></div>
+                <h2 class="subtitle-font text-2xl md:text-3xl text-gray-300 mb-8">Nosso som, nossa luta. Nossa vez.</h2>
+            </div>
+            <div class="flex flex-col md:flex-row justify-center gap-4">
+                <a href="#sobre" class="bg-red-800 hover:bg-red-700 text-white font-bold py-3 px-8 rounded-full transition duration-300 transform hover:scale-105">
+                    Conheça o Projeto
+                </a>
+                <a href="#contato" class="border-2 border-white hover:border-red-700 text-white font-bold py-3 px-8 rounded-full transition duration-300 transform hover:scale-105">
+                    Quero Participar
+                </a>
+            </div>
+            <div class="mt-16">
+                <p class="text-gray-400 text-sm md:text-base">
+                    <i class="fas fa-map-marker-alt mr-2"></i> Samambaia - Distrito Federal
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="sobre" class="py-20 bg-gray-900">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-col lg:flex-row items-center gap-12">
+                <div class="lg:w-1/2">
+                    <div class="graffiti-border pl-6 mb-8">
+                        <h2 class="title-font text-3xl md:text-4xl text-white mb-4">SOBRE O PROJETO</h2>
+                        <div class="w-20 h-1 bg-red-700 mb-6"></div>
+                    </div>
+                    <p class="text-gray-300 mb-8 text-lg leading-relaxed">
+                        O estúdio comunitário <span class="text-red-600 font-bold">"Vozes da Quebrada"</span> nasceu para quebrar barreiras. Na periferia, o talento é gigante, mas o acesso a estúdios, equipamentos e formação é quase zero. Criamos um espaço onde jovens MCs, beatmakers, DJs e artistas independentes possam gravar, aprender, se desenvolver e mostrar sua voz ao mundo. Aqui o som vira resistência, e a arte vira futuro.
+                    </p>
+                    <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+                        <div class="bg-gray-800 p-4 rounded-lg text-center">
+                            <i class="fas fa-microphone text-3xl text-red-700 mb-2"></i>
+                            <p class="text-gray-300 text-sm">Gravação</p>
+                        </div>
+                        <div class="bg-gray-800 p-4 rounded-lg text-center">
+                            <i class="fas fa-headphones text-3xl text-red-700 mb-2"></i>
+                            <p class="text-gray-300 text-sm">Mixagem</p>
+                        </div>
+                        <div class="bg-gray-800 p-4 rounded-lg text-center">
+                            <i class="fas fa-music text-3xl text-red-700 mb-2"></i>
+                            <p class="text-gray-300 text-sm">Produção</p>
+                        </div>
+                        <div class="bg-gray-800 p-4 rounded-lg text-center">
+                            <i class="fas fa-graduation-cap text-3xl text-red-700 mb-2"></i>
+                            <p class="text-gray-300 text-sm">Oficinas</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="lg:w-1/2">
+                    <div class="relative">
+                        <img src="https://images.unsplash.com/photo-1511671782771-c97d3d27d1b7?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="Estúdio de gravação" class="rounded-lg shadow-2xl border-2 border-gray-700">
+                        <div class="absolute -bottom-4 -right-4 bg-gray-800 p-4 rounded-lg border border-gray-700 w-3/4">
+                            <h3 class="subtitle-font text-xl text-white mb-2">Espaço de Resistência</h3>
+                            <p class="text-gray-400 text-sm">Onde a arte transforma vidas</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Mission Section -->
+    <section class="py-20 bg-gray-800">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <div class="graffiti-border pl-6 inline-block">
+                    <h2 class="title-font text-3xl md:text-4xl text-white mb-4">MISSÃO E OBJETIVOS</h2>
+                    <div class="w-20 h-1 bg-red-700 mb-6 mx-auto"></div>
+                </div>
+            </div>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="bg-gray-900 p-6 rounded-lg border-l-4 border-red-700 card-hover transition duration-300">
+                    <i class="fas fa-microphone-alt text-4xl text-red-700 mb-4"></i>
+                    <h3 class="subtitle-font text-xl text-white mb-3">Sessões de Gravação</h3>
+                    <p class="text-gray-400">Oferecemos sessões de gravação gratuitas para artistas da comunidade.</p>
+                </div>
+                
+                <div class="bg-gray-900 p-6 rounded-lg border-l-4 border-red-700 card-hover transition duration-300">
+                    <i class="fas fa-laptop-code text-4xl text-red-700 mb-4"></i>
+                    <h3 class="subtitle-font text-xl text-white mb-3">Oficinas de Produção</h3>
+                    <p class="text-gray-400">Workshops de produção musical, mixagem, beatmaking e marketing artístico.</p>
+                </div>
+                
+                <div class="bg-gray-900 p-6 rounded-lg border-l-4 border-red-700 card-hover transition duration-300">
+                    <i class="fas fa-compact-disc text-4xl text-red-700 mb-4"></i>
+                    <h3 class="subtitle-font text-xl text-white mb-3">Lançamentos Coletivos</h3>
+                    <p class="text-gray-400">Produção e lançamento de coletâneas e videoclipes com artistas da comunidade.</p>
+                </div>
+                
+                <div class="bg-gray-900 p-6 rounded-lg border-l-4 border-red-700 card-hover transition duration-300">
+                    <i class="fas fa-lightbulb text-4xl text-red-700 mb-4"></i>
+                    <h3 class="subtitle-font text-xl text-white mb-3">Empreendedorismo</h3>
+                    <p class="text-gray-400">Estimulamos o empreendedorismo cultural entre os jovens artistas.</p>
+                </div>
+                
+                <div class="bg-gray-900 p-6 rounded-lg border-l-4 border-red-700 card-hover transition duration-300">
+                    <i class="fas fa-hands-helping text-4xl text-red-700 mb-4"></i>
+                    <h3 class="subtitle-font text-xl text-white mb-3">Prevenção Social</h3>
+                    <p class="text-gray-400">Atuamos na prevenção da criminalidade através da arte e cultura.</p>
+                </div>
+                
+                <div class="bg-gray-900 p-6 rounded-lg border-l-4 border-red-700 card-hover transition duration-300">
+                    <i class="fas fa-users text-4xl text-red-700 mb-4"></i>
+                    <h3 class="subtitle-font text-xl text-white mb-3">Comunidade</h3>
+                    <p class="text-gray-400">Criamos uma rede de apoio e colaboração entre artistas da periferia.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Target Audience -->
+    <section class="py-20 bg-gray-900">
+        <div class="container mx-auto px-4">
+            <div class="graffiti-border pl-6 mb-12">
+                <h2 class="title-font text-3xl md:text-4xl text-white mb-4">PÚBLICO-ALVO</h2>
+                <div class="w-20 h-1 bg-red-700 mb-6"></div>
+            </div>
+            
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="bg-gray-800 p-6 rounded-lg text-center card-hover transition duration-300">
+                    <div class="bg-gray-700 p-4 rounded-full w-24 h-24 mx-auto mb-4 flex items-center justify-center">
+                        <i class="fas fa-hiphop text-4xl text-red-700"></i>
+                    </div>
+                    <h3 class="subtitle-font text-xl text-white mb-3">Artistas Urbanos</h3>
+                    <p class="text-gray-400">MCs, rappers, funkeiros, cantores de reggae e artistas independentes.</p>
+                </div>
+                
+                <div class="bg-gray-800 p-6 rounded-lg text-center card-hover transition duration-300">
+                    <div class="bg-gray-700 p-4 rounded-full w-24 h-24 mx-auto mb-4 flex items-center justify-center">
+                        <i class="fas fa-user-friends text-4xl text-red-700"></i>
+                    </div>
+                    <h3 class="subtitle-font text-xl text-white mb-3">Jovens da Periferia</h3>
+                    <p class="text-gray-400">Moradores de 12 a 29 anos em situação de vulnerabilidade social.</p>
+                </div>
+                
+                <div class="bg-gray-800 p-6 rounded-lg text-center card-hover transition duration-300">
+                    <div class="bg-gray-700 p-4 rounded-full w-24 h-24 mx-auto mb-4 flex items-center justify-center">
+                        <i class="fas fa-sliders-h text-4xl text-red-700"></i>
+                    </div>
+                    <h3 class="subtitle-font text-xl text-white mb-3">Produtores Musicais</h3>
+                    <p class="text-gray-400">Beatmakers, DJs, técnicos de som e produtores em formação.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Studio Structure -->
+    <section id="estrutura" class="py-20 bg-gray-800">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <div class="graffiti-border pl-6 inline-block">
+                    <h2 class="title-font text-3xl md:text-4xl text-white mb-4">ESTRUTURA DO ESTÚDIO</h2>
+                    <div class="w-20 h-1 bg-red-700 mb-6 mx-auto"></div>
+                </div>
+            </div>
+            
+            <div class="grid md:grid-cols-2 gap-12">
+                <div>
+                    <div class="studio-equipment pl-6 relative mb-8">
+                        <h3 class="subtitle-font text-2xl text-white mb-4">Áreas do Estúdio</h3>
+                        <ul class="space-y-4 text-gray-300">
+                            <li class="flex items-start">
+                                <i class="fas fa-check-circle text-red-700 mr-3 mt-1"></i>
+                                <span>Sala de gravação com isolamento acústico</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check-circle text-red-700 mr-3 mt-1"></i>
+                                <span>Sala técnica com monitores de áudio profissional</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check-circle text-red-700 mr-3 mt-1"></i>
+                                <span>Espaço multiuso para oficinas e workshops</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check-circle text-red-700 mr-3 mt-1"></i>
+                                <span>Área de convivência com mural de fotos e pôsteres</span>
+                            </li>
+                        </ul>
+                    </div>
+                    
+                    <div class="studio-equipment pl-6 relative">
+                        <h3 class="subtitle-font text-2xl text-white mb-4">Equipamentos</h3>
+                        <div class="grid grid-cols-2 gap-4">
+                            <div class="flex items-center">
+                                <i class="fas fa-microphone text-red-700 mr-2"></i>
+                                <span class="text-gray-300">Microfones</span>
+                            </div>
+                            <div class="flex items-center">
+                                <i class="fas fa-sliders-h text-red-700 mr-2"></i>
+                                <span class="text-gray-300">Mesa de som</span>
+                            </div>
+                            <div class="flex items-center">
+                                <i class="fas fa-headphones text-red-700 mr-2"></i>
+                                <span class="text-gray-300">Monitores</span>
+                            </div>
+                            <div class="flex items-center">
+                                <i class="fas fa-laptop text-red-700 mr-2"></i>
+                                <span class="text-gray-300">FL Studio</span>
+                            </div>
+                            <div class="flex items-center">
+                                <i class="fas fa-video text-red-700 mr-2"></i>
+                                <span class="text-gray-300">Câmeras</span>
+                            </div>
+                            <div class="flex items-center">
+                                <i class="fas fa-compact-disc text-red-700 mr-2"></i>
+                                <span class="text-gray-300">Vinil</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div>
+                    <img src="https://images.unsplash.com/photo-1514525253161-7a46d19cd819?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="Estúdio de gravação" class="rounded-lg shadow-2xl border-2 border-gray-700 w-full">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Activities -->
+    <section id="atividades" class="py-20 bg-gray-900">
+        <div class="container mx-auto px-4">
+            <div class="graffiti-border pl-6 mb-12">
+                <h2 class="title-font text-3xl md:text-4xl text-white mb-4">ATIVIDADES PREVISTAS</h2>
+                <div class="w-20 h-1 bg-red-700 mb-6"></div>
+            </div>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="bg-gray-800 p-6 rounded-lg border-t-4 border-red-700 card-hover transition duration-300">
+                    <div class="flex items-center mb-4">
+                        <div class="bg-red-700 p-2 rounded-full mr-4">
+                            <i class="fas fa-microphone-alt text-white"></i>
+                        </div>
+                        <h3 class="subtitle-font text-xl text-white">Gravações</h3>
+                    </div>
+                    <p class="text-gray-400">Sessões de gravação profissional para artistas da comunidade.</p>
+                </div>
+                
+                <div class="bg-gray-800 p-6 rounded-lg border-t-4 border-red-700 card-hover transition duration-300">
+                    <div class="flex items-center mb-4">
+                        <div class="bg-red-700 p-2 rounded-full mr-4">
+                            <i class="fas fa-laptop-code text-white"></i>
+                        </div>
+                        <h3 class="subtitle-font text-xl text-white">Oficinas</h3>
+                    </div>
+                    <p class="text-gray-400">Workshops de produção musical, beatmaking e mixagem.</p>
+                </div>
+                
+                <div class="bg-gray-800 p-6 rounded-lg border-t-4 border-red-700 card-hover transition duration-300">
+                    <div class="flex items-center mb-4">
+                        <div class="bg-red-700 p-2 rounded-full mr-4">
+                            <i class="fas fa-fire text-white"></i>
+                        </div>
+                        <h3 class="subtitle-font text-xl text-white">Batalhas</h3>
+                    </div>
+                    <p class="text-gray-400">Batalhas de rima e competições de freestyle.</p>
+                </div>
+                
+                <div class="bg-gray-800 p-6 rounded-lg border-t-4 border-red-700 card-hover transition duration-300">
+                    <div class="flex items-center mb-4">
+                        <div class="bg-red-700 p-2 rounded-full mr-4">
+                            <i class="fas fa-podcast text-white"></i>
+                        </div>
+                        <h3 class="subtitle-font text-xl text-white">Podcasts</h3>
+                    </div>
+                    <p class="text-gray-400">Gravação de podcasts e debates sobre cultura urbana.</p>
+                </div>
+                
+                <div class="bg-gray-800 p-6 rounded-lg border-t-4 border-red-700 card-hover transition duration-300">
+                    <div class="flex items-center mb-4">
+                        <div class="bg-red-700 p-2 rounded-full mr-4">
+                            <i class="fas fa-compact-disc text-white"></i>
+                        </div>
+                        <h3 class="subtitle-font text-xl text-white">Lançamentos</h3>
+                    </div>
+                    <p class="text-gray-400">Produção e lançamento de mixtapes coletivas.</p>
+                </div>
+                
+                <div class="bg-gray-800 p-6 rounded-lg border-t-4 border-red-700 card-hover transition duration-300">
+                    <div class="flex items-center mb-4">
+                        <div class="bg-red-700 p-2 rounded-full mr-4">
+                            <i class="fas fa-music text-white"></i>
+                        </div>
+                        <h3 class="subtitle-font text-xl text-white">Eventos</h3>
+                    </div>
+                    <p class="text-gray-400">Shows e apresentações culturais na comunidade.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Results -->
+    <section class="py-20 bg-gray-800">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <div class="graffiti-border pl-6 inline-block">
+                    <h2 class="title-font text-3xl md:text-4xl text-white mb-4">RESULTADOS ESPERADOS</h2>
+                    <div class="w-20 h-1 bg-red-700 mb-6 mx-auto"></div>
+                </div>
+            </div>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <div class="bg-gray-900 p-6 rounded-lg text-center">
+                    <div class="text-5xl font-bold text-red-700 mb-2">100+</div>
+                    <p class="text-gray-300 uppercase text-sm">Músicas gravadas</p>
+                </div>
+                
+                <div class="bg-gray-900 p-6 rounded-lg text-center">
+                    <div class="text-5xl font-bold text-red-700 mb-2">80</div>
+                    <p class="text-gray-300 uppercase text-sm">Jovens capacitados</p>
+                </div>
+                
+                <div class="bg-gray-900 p-6 rounded-lg text-center">
+                    <div class="text-5xl font-bold text-red-700 mb-2">20</div>
+                    <p class="text-gray-300 uppercase text-sm">Faixas lançadas</p>
+                </div>
+                
+                <div class="bg-gray-900 p-6 rounded-lg text-center">
+                    <div class="text-5xl font-bold text-red-700 mb-2">∞</div>
+                    <p class="text-gray-300 uppercase text-sm">Vidas transformadas</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Timeline -->
+    <section class="py-20 bg-gray-900">
+        <div class="container mx-auto px-4">
+            <div class="graffiti-border pl-6 mb-12">
+                <h2 class="title-font text-3xl md:text-4xl text-white mb-4">CRONOGRAMA</h2>
+                <div class="w-20 h-1 bg-red-700 mb-6"></div>
+            </div>
+            
+            <div class="relative">
+                <div class="absolute left-0 top-0 h-full w-1 bg-gray-700 ml-4 md:ml-6"></div>
+                
+                <div class="space-y-8 pl-12 md:pl-16">
+                    <div class="relative timeline-item">
+                        <div class="bg-gray-800 p-6 rounded-lg border-l-4 border-red-700">
+                            <h3 class="subtitle-font text-xl text-white mb-2">Montagem do Estúdio</h3>
+                            <p class="text-gray-400">Seleção da equipe e preparação do espaço físico.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="relative timeline-item">
+                        <div class="bg-gray-800 p-6 rounded-lg border-l-4 border-red-700">
+                            <h3 class="subtitle-font text-xl text-white mb-2">Início das Gravações</h3>
+                            <p class="text-gray-400">Primeiras sessões de gravação e oficinas.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="relative timeline-item">
+                        <div class="bg-gray-800 p-6 rounded-lg border-l-4 border-red-700">
+                            <h3 class="subtitle-font text-xl text-white mb-2">Lançamento Coletivo</h3>
+                            <p class="text-gray-400">Produção e lançamento da primeira mixtape.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="relative timeline-item">
+                        <div class="bg-gray-800 p-6 rounded-lg border-l-4 border-red-700">
+                            <h3 class="subtitle-font text-xl text-white mb-2">Expansão</h3>
+                            <p class="text-gray-400">Ampliação das oficinas e mentorias avançadas.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="relative timeline-item">
+                        <div class="bg-gray-800 p-6 rounded-lg border-l-4 border-red-700">
+                            <h3 class="subtitle-font text-xl text-white mb-2">Novo Lançamento</h3>
+                            <p class="text-gray-400">Gravações avançadas e segunda coletânea.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery -->
+    <section id="galeria" class="py-20 bg-gray-800">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <div class="graffiti-border pl-6 inline-block">
+                    <h2 class="title-font text-3xl md:text-4xl text-white mb-4">GALERIA</h2>
+                    <div class="w-20 h-1 bg-red-700 mb-6 mx-auto"></div>
+                </div>
+            </div>
+            
+            <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+                <div class="overflow-hidden rounded-lg">
+                    <img src="https://images.unsplash.com/photo-1511671782771-c97d3d27d1b7?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="Artista gravando" class="w-full h-full object-cover transform hover:scale-110 transition duration-500">
+                </div>
+                <div class="overflow-hidden rounded-lg">
+                    <img src="https://images.unsplash.com/photo-1511671782771-c97d3d27d1b7?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="Oficina de produção" class="w-full h-full object-cover transform hover:scale-110 transition duration-500">
+                </div>
+                <div class="overflow-hidden rounded-lg">
+                    <img src="https://images.unsplash.com/photo-1511671782771-c97d3d27d1b7?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="Batalha de rima" class="w-full h-full object-cover transform hover:scale-110 transition duration-500">
+                </div>
+                <div class="overflow-hidden rounded-lg">
+                    <img src="https://images.unsplash.com/photo-1511671782771-c97d3d27d1b7?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="Estúdio comunitário" class="w-full h-full object-cover transform hover:scale-110 transition duration-500">
+                </div>
+                <div class="overflow-hidden rounded-lg">
+                    <img src="https://images.unsplash.com/photo-1511671782771-c97d3d27d1b7?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="Podcast sendo gravado" class="w-full h-full object-cover transform hover:scale-110 transition duration-500">
+                </div>
+                <div class="overflow-hidden rounded-lg">
+                    <img src="https://images.unsplash.com/photo-1511671782771-c97d3d27d1b7?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="Show comunitário" class="w-full h-full object-cover transform hover:scale-110 transition duration-500">
+                </div>
+                <div class="overflow-hidden rounded-lg">
+                    <img src="https://images.unsplash.com/photo-1511671782771-c97d3d27d1b7?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="Artistas reunidos" class="w-full h-full object-cover transform hover:scale-110 transition duration-500">
+                </div>
+                <div class="overflow-hidden rounded-lg">
+                    <img src="https://images.unsplash.com/photo-1511671782771-c97d3d27d1b7?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="Lançamento de mixtape" class="w-full h-full object-cover transform hover:scale-110 transition duration-500">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Location -->
+    <section class="py-20 bg-gray-900">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-col lg:flex-row items-center gap-12">
+                <div class="lg:w-1/2">
+                    <div class="graffiti-border pl-6 mb-8">
+                        <h2 class="title-font text-3xl md:text-4xl text-white mb-4">LOCALIZAÇÃO</h2>
+                        <div class="w-20 h-1 bg-red-700 mb-6"></div>
+                    </div>
+                    <p class="text-gray-300 mb-8 text-lg leading-relaxed">
+                        <span class="text-red-600 font-bold">Samambaia - Distrito Federal</span> é o coração do projeto "Vozes da Quebrada". Aqui, a juventude transforma arte em resistência e som em oportunidade. O estúdio está localizado dentro da comunidade, de fácil acesso, acolhedor e com estrutura profissional.
+                    </p>
+                    <div class="bg-gray-800 p-6 rounded-lg">
+                        <h3 class="subtitle-font text-xl text-white mb-4">Como chegar</h3>
+                        <ul class="space-y-3 text-gray-400">
+                            <li class="flex items-start">
+                                <i class="fas fa-bus text-red-700 mr-3 mt-1"></i>
+                                <span>Ônibus: Linhas 0.900, 0.901 e 0.902 - Parada Rua 12</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-subway text-red-700 mr-3 mt-1"></i>
+                                <span>Metrô: Estação Samambaia Sul + ônibus 0.903</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-car text-red-700 mr-3 mt-1"></i>
+                                <span>Carro: Acesso pela QS 413 Conjunto 2</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="lg:w-1/2">
+                    <div class="bg-gray-800 p-4 rounded-lg border border-gray-700">
+                        <div class="relative h-64 md:h-96 w-full bg-gray-700 rounded-lg flex items-center justify-center">
+                            <i class="fas fa-map-marker-alt text-4xl text-red-700"></i>
+                            <p class="absolute bottom-4 left-4 text-gray-300">Samambaia - DF</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact -->
+    <section id="contato" class="py-20 bg-gray-800">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <div class="graffiti-border pl-6 inline-block">
+                    <h2 class="title-font text-3xl md:text-4xl text-white mb-4">PARTICIPE OU APOIE</h2>
+                    <div class="w-20 h-1 bg-red-700 mb-6 mx-auto"></div>
+                </div>
+            </div>
+            
+            <div class="max-w-3xl mx-auto">
+                <form class="space-y-6">
+                    <div class="grid md:grid-cols-2 gap-6">
+                        <div>
+                            <label for="name" class="block text-gray-300 mb-2">Nome</label>
+                            <input type="text" id="name" class="w-full bg-gray-700 border border-gray-600 rounded-lg px-4 py-3 text-white focus:outline-none focus:ring-2 focus:ring-red-700">
+                        </div>
+                        <div>
+                            <label for="email" class="block text-gray-300 mb-2">Email</label>
+                            <input type="email" id="email" class="w-full bg-gray-700 border border-gray-600 rounded-lg px-4 py-3 text-white focus:outline-none focus:ring-2 focus:ring-red-700">
+                        </div>
+                    </div>
+                    <div>
+                        <label for="subject" class="block text-gray-300 mb-2">Assunto</label>
+                        <select id="subject" class="w-full bg-gray-700 border border-gray-600 rounded-lg px-4 py-3 text-white focus:outline-none focus:ring-2 focus:ring-red-700">
+                            <option value="">Selecione...</option>
+                            <option value="participate">Quero participar</option>
+                            <option value="support">Quero apoiar</option>
+                            <option value="info">Quero mais informações</option>
+                            <option value="workshop">Quero me inscrever nas oficinas</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label for="message" class="block text-gray-300 mb-2">Mensagem</label>
+                        <textarea id="message" rows="5" class="w-full bg-gray-700 border border-gray-600 rounded-lg px-4 py-3 text-white focus:outline-none focus:ring-2 focus:ring-red-700"></textarea>
+                    </div>
+                    <div>
+                        <button type="submit" class="bg-red-700 hover:bg-red-600 text-white font-bold py-3 px-8 rounded-full transition duration-300 w-full md:w-auto">
+                            Enviar Mensagem
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-black py-12">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-col md:flex-row justify-between items-center mb-8">
+                <div class="flex items-center mb-6 md:mb-0">
+                    <i class="fas fa-microphone-alt text-3xl text-red-700 mr-3"></i>
+                    <span class="title-font text-2xl text-white">VOZES DA QUEBRADA</span>
+                </div>
+                
+                <div class="flex space-x-6">
+                    <a href="#" class="text-gray-400 hover:text-white transition">
+                        <i class="fab fa-instagram text-2xl"></i>
+                    </a>
+                    <a href="#" class="text-gray-400 hover:text-white transition">
+                        <i class="fab fa-youtube text-2xl"></i>
+                    </a>
+                    <a href="#" class="text-gray-400 hover:text-white transition">
+                        <i class="fab fa-spotify text-2xl"></i>
+                    </a>
+                    <a href="#" class="text-gray-400 hover:text-white transition">
+                        <i class="fab fa-facebook text-2xl"></i>
+                    </a>
+                </div>
+            </div>
+            
+            <div class="grid md:grid-cols-3 gap-8 mb-8">
+                <div>
+                    <h3 class="subtitle-font text-xl text-white mb-4">Endereço</h3>
+                    <p class="text-gray-400">
+                        QS 413 Conjunto 2, Lote 15<br>
+                        Samambaia - Distrito Federal<br>
+                        CEP: 72300-000
+                    </p>
+                </div>
+                
+                <div>
+                    <h3 class="subtitle-font text-xl text-white mb-4">Contato</h3>
+                    <p class="text-gray-400">
+                        <i class="fas fa-phone-alt mr-2"></i> (61) 99999-9999<br>
+                        <i class="fas fa-envelope mr-2"></i> contato@vozesdaquebrada.org
+                    </p>
+                </div>
+                
+                <div>
+                    <h3 class="subtitle-font text-xl text-white mb-4">Horário</h3>
+                    <p class="text-gray-400">
+                        Segunda a Sexta: 14h às 20h<br>
+                        Sábado: 10h às 16h<br>
+                        Domingo: Fechado
+                    </p>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-800 pt-8">
+                <div class="flex flex-col md:flex-row justify-between items-center">
+                    <p class="text-gray-500 text-sm mb-4 md:mb-0">
+                        © 2023 Vozes da Quebrada. Todos os direitos reservados.
+                    </p>
+                    
+                    <div class="text-center">
+                        <p class="text-gray-300 mb-2 italic">"Periferia não pede espaço. Constrói o seu."</p>
+                        <p class="text-gray-300 italic">"Aqui o som é arma de transformação."</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Simple animation for audio wave
+        document.addEventListener('DOMContentLoaded', function() {
+            const audioWave = document.querySelector('.audio-wave');
+            setInterval(() => {
+                audioWave.style.height = Math.random() * 20 + 40 + 'px';
+            }, 300);
+            
+            // Smooth scrolling for anchor links
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    
+                    document.querySelector(this.getAttribute('href')).scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                });
+            });
+        });
+    </script>
+</body>
+</html>
